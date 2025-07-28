@@ -1,4 +1,4 @@
-/* src/styles/globals.css - Design "Apple-like" */
+/* src/styles/globals.css - Design "Apple-like" - Cards Refinados */
 
 /* Variáveis CSS para cores e fontes */
 :root {
@@ -97,8 +97,8 @@ a {
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transição suave */
   color: var(--text-primary);
   border: 1px solid var(--border-color); /* Borda mais visível */
-  justify-content: space-between;
-  text-align: center; /* Centraliza o conteúdo do card */
+  justify-content: flex-start; /* Alinha o conteúdo ao topo do card */
+  /* Removido text-align: center para controlar cada elemento */
 }
 
 .isoCard:hover {
@@ -107,7 +107,10 @@ a {
 }
 
 .cardHeader {
-  margin-bottom: 20px; /* Mais espaçamento */
+  margin-bottom: 15px; /* Espaço após o cabeçalho */
+  padding-bottom: 15px; /* Padding interno para o cabeçalho */
+  border-bottom: 1px solid rgba(var(--border-color), 0.5); /* Separador sutil */
+  text-align: center; /* Centraliza o título e a versão */
 }
 
 .isoCard h3 {
@@ -127,7 +130,9 @@ a {
 
 .cardBody {
   flex-grow: 1;
+  margin-top: 15px; /* Espaço após o separador */
   margin-bottom: 25px; /* Mais espaçamento */
+  text-align: left; /* Alinha o conteúdo do corpo à esquerda */
 }
 
 .description {
@@ -142,6 +147,10 @@ a {
   color: var(--text-secondary);
   margin-bottom: 5px;
   line-height: 1.4;
+}
+
+.checksum {
+  margin-top: 10px; /* Mais espaço para o checksum */
 }
 
 .checksum code {
@@ -164,10 +173,9 @@ a {
   font-weight: bold;
   font-size: 1.15rem; /* Texto do botão maior */
   transition: background-color 0.2s ease, transform 0.1s ease;
-  margin-top: 20px;
-  display: inline-block; /* Para que o padding funcione corretamente */
-  width: fit-content; /* Ajusta largura ao conteúdo */
-  align-self: center; /* Centraliza o botão */
+  margin-top: auto; /* Empurra o botão para baixo, ocupando espaço flexível */
+  display: block; /* Ocupa a largura total do card */
+  width: 100%; /* Botão com largura total para melhor clique */
 }
 
 .downloadButton:hover {
