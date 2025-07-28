@@ -9,7 +9,7 @@
     "checksum_sha256": "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
     "data_lancamento": "2025-07-20",
     "descricao_curta": "A versão mais recente do macOS com novos recursos de produtividade e personalização.",
-    "image": "/images/sonoma.png"
+    "image": "https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/e5f26062695c9ebab32d0262986be298_low_res_macOS_Sonoma__Dark_.png"
   },
   {
     "id": "macos-ventura-13-6-7",
@@ -21,7 +21,7 @@
     "checksum_sha256": "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
     "data_lancamento": "2024-07-15",
     "descricao_curta": "A versão mais recente do macOS com foco em produtividade e recursos avançados.",
-    "image": "/images/ventura.png"
+    "image": "https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/1d071ef6448c3a62de3d78daa073149c_lNv1CZH1PJ.png"
   },
   {
     "id": "macos-monterey-12-7-5",
@@ -33,7 +33,7 @@
     "checksum_sha256": "zyxwvu9876543210zyxwvu9876543210zyxwvu9876543210zyxwvu9876543210",
     "data_lancamento": "2024-06-20",
     "descricao_curta": "Uma versão estável e robusta do macOS, ideal para diversas máquinas.",
-    "image": "/images/monterey.png"
+    "image": "/https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/ec56d6818d650384ca85c57df10b9775_low_res_macOS%20Monterey.png"
   },
   {
     "id": "macos-big-sur-11-7-10",
@@ -45,7 +45,7 @@
     "checksum_sha256": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcd",
     "data_lancamento": "2023-09-27",
     "descricao_curta": "Com um redesenho visual marcante e novas funcionalidades.",
-    "image": "/images/bigsur.png"
+    "image": "https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/eb3aaae2b804e6d9b9f073d7d0b50fcc_TcUfOdHeRR.png"
   },
   {
     "id": "macos-catalina-10-15-7",
