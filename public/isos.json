@@ -1,13 +1,68 @@
 [
   {
+    "id": "macos-sonoma-14-5",
+    "nome": "macOS Sonoma",
+    "versao": "14.5",
+    "build": "23F79",
+    "tamanho_gb": 13.0,
+    "link_download": "https://seu-servico-de-armazenamento.com/sonoma_14.5.iso",
+    "checksum_sha256": "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+    "data_lancamento": "2025-07-20",
+    "descricao_curta": "A versão mais recente do macOS com novos recursos de produtividade e personalização."
+  },
+  {
     "id": "macos-ventura-13-6-7",
     "nome": "macOS Ventura",
     "versao": "13.6.7",
     "build": "22G720",
     "tamanho_gb": 12.5,
-    "link_download": "https://drive.google.com/file/d/1sRFLM9528MGxdwJ5rIEA-zhbMFFT18iy/view?usp=sharing",
+    "link_download": "https://seu-servico-de-armazenamento.com/ventura_13.6.7.iso",
     "checksum_sha256": "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
     "data_lancamento": "2024-07-15",
     "descricao_curta": "A versão mais recente do macOS com foco em produtividade e recursos avançados."
+  },
+  {
+    "id": "macos-monterey-12-7-5",
+    "nome": "macOS Monterey",
+    "versao": "12.7.5",
+    "build": "21G1234",
+    "tamanho_gb": 12.0,
+    "link_download": "https://seu-servico-de-armazenamento.com/monterey_12.7.5.iso",
+    "checksum_sha256": "zyxwvu9876543210zyxwvu9876543210zyxwvu9876543210zyxwvu9876543210",
+    "data_lancamento": "2024-06-20",
+    "descricao_curta": "Uma versão estável e robusta do macOS, ideal para diversas máquinas."
+  },
+  {
+    "id": "macos-big-sur-11-7-10",
+    "nome": "macOS Big Sur",
+    "versao": "11.7.10",
+    "build": "20G1427",
+    "tamanho_gb": 11.8,
+    "link_download": "https://seu-servico-de-armazenamento.com/big_sur_11.7.10.iso",
+    "checksum_sha256": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcd",
+    "data_lancamento": "2023-09-27",
+    "descricao_curta": "Com um redesenho visual marcante e novas funcionalidades."
+  },
+  {
+    "id": "macos-catalina-10-15-7",
+    "nome": "macOS Catalina",
+    "versao": "10.15.7",
+    "build": "19H15",
+    "tamanho_gb": 10.5,
+    "link_download": "https://seu-servico-de-armazenamento.com/catalina_10.15.7.iso",
+    "checksum_sha256": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
+    "data_lancamento": "2022-11-01",
+    "descricao_curta": "Versão anterior do macOS com aplicativos de música, TV e podcasts dedicados."
+  },
+  {
+    "id": "macos-mojave-10-14-6",
+    "nome": "macOS Mojave",
+    "versao": "10.14.6",
+    "build": "18G103",
+    "tamanho_gb": 9.8,
+    "link_download": "https://seu-servico-de-armazenamento.com/mojave_10.14.6.iso",
+    "checksum_sha256": "b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2",
+    "data_lancamento": "2021-07-19",
+    "descricao_curta": "Introduziu o Modo Escuro e a Mac App Store redesenhada."
   }
 ]
