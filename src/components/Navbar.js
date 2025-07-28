@@ -1,7 +1,6 @@
 // src/components/Navbar.js
 import React, { useState } from 'react';
 import Link from 'next/link'; // Importa o componente Link do Next.js para navegação
-import '../styles/globals.css'; // Para os estilos do Navbar
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false); // Estado para controlar se o menu mobile está aberto
