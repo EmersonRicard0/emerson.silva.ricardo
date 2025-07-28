@@ -1,0 +1,13 @@
+[
+  {
+    "id": "macos-ventura-13-6-7",
+    "nome": "macOS Ventura",
+    "versao": "13.6.7",
+    "build": "22G720",
+    "tamanho_gb": 12.5,
+    "link_download": "https://drive.google.com/file/d/1sRFLM9528MGxdwJ5rIEA-zhbMFFT18iy/view?usp=sharing",
+    "checksum_sha256": "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+    "data_lancamento": "2024-07-15",
+    "descricao_curta": "A versão mais recente do macOS com foco em produtividade e recursos avançados."
+  }
+]
