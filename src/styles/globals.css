@@ -1,13 +1,28 @@
-/* src/styles/globals.css */
+/* src/styles/globals.css - Design "Apple-like" */
+
+/* Variáveis CSS para cores e fontes */
+:root {
+  --background-dark: #1c1c1e; /* Um tom de cinza escuro mais 'rico' */
+  --card-background: #2c2c2e; /* Fundo do card ligeiramente mais claro */
+  --text-primary: #f0f0f0; /* Texto principal claro */
+  --text-secondary: #a0a0a0; /* Texto secundário (cinza) */
+  --apple-blue: #007aff; /* O azul clássico da Apple */
+  --apple-blue-dark: #005bb5; /* Versão mais escura do azul para hover */
+  --border-color: #48484a; /* Borda sutil para elementos */
+  --shadow-color: rgba(0, 0, 0, 0.5); /* Cor da sombra */
+  --border-radius-lg: 14px; /* Raio de borda maior para cards */
+  --border-radius-md: 10px; /* Raio de borda médio para botões */
+  --font-family-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #1a1a1a; /* Fundo escuro */
-  color: #e0e0e0; /* Texto claro */
+  font-family: var(--font-family-system);
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  line-height: 1.6; /* Melhorar legibilidade */
 }
 
 a {
@@ -22,169 +37,209 @@ a {
 /* Layout Geral */
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
+  padding: 0 1.5rem; /* Aumenta o padding lateral */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Alinha ao topo */
   align-items: center;
 }
 
 .main {
-  padding: 5rem 0;
+  padding: 6rem 0; /* Aumenta o padding superior e inferior */
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1200px; /* Limita a largura do conteúdo principal */
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+  max-width: 1400px; /* Aumenta a largura máxima */
 }
 
 .title {
   margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+  line-height: 1.2;
+  font-size: 4.5rem; /* Título maior */
   text-align: center;
-  color: #fff; /* Título mais branco */
+  color: var(--text-primary);
+  font-weight: 700; /* Mais negrito */
+  letter-spacing: -0.03em; /* Espaçamento de letras sutil */
 }
 
 .description {
   text-align: center;
   line-height: 1.5;
-  font-size: 1.5rem;
-  margin-bottom: 3rem;
+  font-size: 1.6rem; /* Descrição maior */
+  margin-top: 1rem;
+  margin-bottom: 4rem; /* Mais espaçamento */
+  color: var(--text-secondary);
+  max-width: 800px; /* Limita largura da descrição */
 }
 
 /* Grid para os cards */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
-  gap: 30px; /* Espaçamento entre os cards */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Cards ligeiramente maiores */
+  gap: 35px; /* Mais espaçamento entre cards */
   width: 100%;
-  max-width: 1000px; /* Limita a largura do grid */
+  max-width: 1200px; /* Ajusta largura do grid */
   margin-top: 3rem;
-  padding: 0 20px; /* Padding nas laterais */
+  padding: 0 20px;
 }
 
 /* Estilos do IsoCard */
 .isoCard {
   display: flex;
   flex-direction: column;
-  background-color: #2a2a2a; /* Fundo do card */
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Sombra para o efeito "flutuante" */
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  color: #e0e0e0; /* Cor do texto no card */
-  border: 1px solid #3d3d3d; /* Borda sutil */
-  justify-content: space-between; /* Espaça o conteúdo */
+  background-color: var(--card-background);
+  border-radius: var(--border-radius-lg);
+  padding: 30px; /* Mais padding */
+  box-shadow: 0 8px 20px var(--shadow-color); /* Sombra mais pronunciada mas suave */
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transição suave */
+  color: var(--text-primary);
+  border: 1px solid var(--border-color); /* Borda mais visível */
+  justify-content: space-between;
+  text-align: center; /* Centraliza o conteúdo do card */
 }
 
 .isoCard:hover {
-  transform: translateY(-8px); /* Efeito de "subir" no hover */
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6); /* Sombra mais intensa */
+  transform: translateY(-10px); /* Efeito de "subir" mais evidente */
+  box-shadow: 0 15px 30px var(--shadow-color); /* Sombra mais intensa no hover */
 }
 
 .cardHeader {
-  margin-bottom: 15px;
+  margin-bottom: 20px; /* Mais espaçamento */
 }
 
 .isoCard h3 {
-  color: #007aff; /* Azul para o título da ISO (cor da Apple) */
+  color: var(--apple-blue);
   margin: 0;
-  font-size: 1.8rem;
-  line-height: 1.2;
+  font-size: 2.2rem; /* Título do card maior */
+  font-weight: 600; /* Seminegrito */
+  letter-spacing: -0.02em;
 }
 
 .versionBuild {
-  font-size: 1rem;
-  color: #a0a0a0;
-  margin-top: 5px;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  font-weight: 500;
 }
 
 .cardBody {
-  flex-grow: 1; /* Faz o corpo ocupar o espaço restante */
-  margin-bottom: 20px;
+  flex-grow: 1;
+  margin-bottom: 25px; /* Mais espaçamento */
 }
 
 .description {
   font-size: 1.05rem;
-  margin-bottom: 10px;
-  line-height: 1.4;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  color: var(--text-secondary); /* Descrição secundária */
 }
 
 .size, .releaseDate, .checksum {
-  font-size: 0.9rem;
-  color: #bdbdbd;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
   margin-bottom: 5px;
+  line-height: 1.4;
 }
 
 .checksum code {
   font-family: monospace;
   background-color: #3a3a3a;
-  padding: 2px 5px;
-  border-radius: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
   font-size: 0.85rem;
+  color: #c0c0c0;
+  display: inline-block; /* Para garantir padding */
+  word-break: break-all; /* Quebra linhas longas */
 }
 
 .downloadButton {
-  background-color: #007aff; /* Azul da Apple */
+  background-color: var(--apple-blue);
   color: white;
-  padding: 12px 20px;
-  border-radius: 8px;
+  padding: 14px 25px; /* Mais padding */
+  border-radius: var(--border-radius-md); /* Borda arredondada no botão */
   text-align: center;
   font-weight: bold;
-  font-size: 1.1rem;
-  transition: background-color 0.2s ease;
-  margin-top: 15px; /* Espaço acima do botão */
+  font-size: 1.15rem; /* Texto do botão maior */
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 20px;
+  display: inline-block; /* Para que o padding funcione corretamente */
+  width: fit-content; /* Ajusta largura ao conteúdo */
+  align-self: center; /* Centraliza o botão */
 }
 
 .downloadButton:hover {
-  background-color: #005bb5; /* Azul mais escuro no hover */
+  background-color: var(--apple-blue-dark);
+  transform: translateY(-2px); /* Efeito sutil no hover */
 }
 
 /* Footer */
 .footer {
   display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #333;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  padding: 2.5rem 0; /* Mais padding no footer */
+  border-top: 1px solid var(--border-color);
+  margin-top: 60px; /* Mais espaçamento do conteúdo */
   width: 100%;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }
 
 .footer a {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
-  color: #a0a0a0;
+  flex-grow: 0; /* Não cresce para ocupar espaço */
+  color: inherit;
 }
 
 .footer .logo {
-  height: 1em;
-  margin-left: 0.5rem;
-  filter: invert(1); /* Inverte a cor do logo para ficar visível no fundo escuro */
+  height: 1.2em; /* Logo um pouco maior */
+  margin-left: 0.6rem;
+  filter: invert(1) brightness(0.8); /* Ajusta o logo para o fundo escuro */
 }
 
-/* Responsividade básica */
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+/* Responsividade */
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1.3rem;
     padding: 0 10px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    padding: 0 15px;
+    gap: 25px;
+  }
+
+  .isoCard {
+    padding: 25px;
+  }
+
+  .isoCard h3 {
+    font-size: 1.8rem;
+  }
+
+  .downloadButton {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .main {
+    padding: 4rem 0;
   }
 
   .title {
@@ -192,6 +247,6 @@ a {
   }
 
   .description {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
