@@ -1,5 +1,155 @@
-/* src/styles/globals.css - Design "Apple-like" - Versão Final */
+/* src/styles/globals.css - Design "Apple-like" - Versão Final *
 
+/* --- Estilos do Navbar --- */
+.navbar {
+  width: 100%;
+  background-color: rgba(44, 44, 46, 0.9); /* Fundo sutilmente transparente */
+  backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+  -webkit-backdrop-filter: blur(10px); /* Compatibilidade Safari */
+  position: fixed; /* Fixo no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+  padding: 1rem 0;
+}
+
+.navbarContainer {
+  max-width: 1400px; /* Mesma largura máxima do main */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Espaça a marca e os links */
+  align-items: center;
+  padding: 0 2rem; /* Padding lateral */
+}
+
+.navbarBrand {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  transition: opacity 0.2s ease;
+}
+
+.navbarBrand:hover {
+  opacity: 0.8;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2.5rem; /* Espaçamento entre os itens do menu */
+}
+
+.navItem {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.navItem:hover {
+  color: var(--text-primary); /* Fica branco no hover */
+}
+
+.navItem::after { /* Sublinhado sutil no hover */
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--apple-blue);
+  transition: width 0.2s ease-in-out;
+}
+
+.navItem:hover::after {
+  width: 100%;
+}
+
+/* Botão Hambúrguer (Mobile) */
+.hamburger {
+  display: none; /* Esconde por padrão em desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 20px;
+  padding: 0;
+  z-index: 1001; /* Garante que o botão fique acima do menu mobile */
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsividade do Navbar */
+@media (max-width: 768px) {
+  .navbarContainer {
+    padding: 0 1.5rem;
+  }
+
+  .navLinks {
+    display: none; /* Esconde links em mobile por padrão */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Abaixo do navbar */
+    left: 0;
+    width: 100%;
+    background-color: rgba(44, 44, 46, 0.95); /* Fundo quase sólido para o menu aberto */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 1rem 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+  }
+
+  .navLinks.open {
+    display: flex; /* Mostra links quando o menu está aberto */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .navItem {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navItem::after { /* Remove o sublinhado em mobile, se preferir */
+    content: none;
+  }
+  .navItem:active { /* Feedback tátil para mobile */
+    background-color: rgba(var(--apple-blue), 0.2);
+  }
+
+  .hamburger {
+    display: flex; /* Mostra o hambúrguer em mobile */
+  }
+
+  /* Animação do botão hambúrguer */
+  .hamburger.open .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
 /* Variáveis CSS para cores e fontes */
 :root {
   --background-dark: #1a1a1c; /* Fundo mais escuro e sutil */
@@ -49,7 +199,17 @@ a {
   justify-content: flex-start;
   align-items: center;
 }
-
+.main {
+  padding: 6rem 0; /* AJUSTE ESTA LINHA */ /* Era 7rem 0 */
+  padding-top: calc(7rem + 80px); /* Adiciona padding para empurrar o conteúdo para baixo do navbar. Ajuste o 80px conforme a altura final do seu navbar */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1600px;
+}
 .main {
   padding: 7rem 0; /* Mais padding superior/inferior */
   flex: 1;
