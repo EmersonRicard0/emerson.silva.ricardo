@@ -9,7 +9,7 @@
     "checksum_sha256": "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
     "data_lancamento": "2025-07-20",
     "descricao_curta": "A versão mais recente do macOS com novos recursos de produtividade e personalização.",
-    "image": "/images/sonoma.icns"
+    "image": "/images/sonoma.png"
   },
   {
     "id": "macos-ventura-13-6-7",
@@ -21,7 +21,7 @@
     "checksum_sha256": "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
     "data_lancamento": "2024-07-15",
     "descricao_curta": "A versão mais recente do macOS com foco em produtividade e recursos avançados.",
-    "image": "/images/ventura.icns"
+    "image": "/images/ventura.png"
   },
   {
     "id": "macos-monterey-12-7-5",
@@ -33,7 +33,7 @@
     "checksum_sha256": "zyxwvu9876543210zyxwvu9876543210zyxwvu9876543210zyxwvu9876543210",
     "data_lancamento": "2024-06-20",
     "descricao_curta": "Uma versão estável e robusta do macOS, ideal para diversas máquinas.",
-    "image": "/images/monterey.icns"
+    "image": "/images/monterey.png"
   },
   {
     "id": "macos-big-sur-11-7-10",
@@ -45,7 +45,7 @@
     "checksum_sha256": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcd",
     "data_lancamento": "2023-09-27",
     "descricao_curta": "Com um redesenho visual marcante e novas funcionalidades.",
-    "image": "/images/bigsur.icns"
+    "image": "/images/bigsur.png"
   },
   {
     "id": "macos-catalina-10-15-7",
