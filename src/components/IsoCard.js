@@ -17,8 +17,8 @@ function IsoCard({ iso }) {
       </div>
       <div className="cardBody">
         <p className="description">{iso.descricao_curta}</p>
-        <p className="size">Tamanho: **{iso.tamanho_gb} GB**</p>
-        <p className="releaseDate">Lançamento: {iso.data_lancamento}</p>
+        <p className="size">Tamanho: {iso.tamanho_gb} GB</p>
+        
         {iso.checksum_sha256 && (
           <p className="checksum">SHA256: <code>{iso.checksum_sha256.substring(0, 10)}...</code></p>
         )}
