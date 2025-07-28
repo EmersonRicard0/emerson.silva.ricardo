@@ -1,19 +1,20 @@
-/* src/styles/globals.css - Design "Apple-like" com Imagens Circulares */
+/* src/styles/globals.css - Design "Apple-like" - Versão Final */
 
-/* Variáveis CSS para cores e fontes - Facilita a manutenção */
+/* Variáveis CSS para cores e fontes */
 :root {
-  --background-dark: #1c1c1e; /* Tom de cinza escuro para o fundo (quase preto) */
-  --card-background: #2c2c2e; /* Fundo dos cards ligeiramente mais claro */
-  --text-primary: #f0f0f0; /* Cor do texto principal (quase branco) */
-  --text-secondary: #a0a0a0; /* Cor do texto secundário (cinza claro) */
-  --apple-blue: #007aff; /* O azul vibrante característico da Apple */
-  --apple-blue-dark: #005bb5; /* Versão mais escura do azul para efeitos de hover */
-  --border-color: #48484a; /* Cor da borda sutil para elementos */
-  --shadow-color: rgba(0, 0, 0, 0.5); /* Cor base para as sombras */
-  --border-radius-lg: 14px; /* Raio de borda maior para cards e blocos */
-  --border-radius-md: 10px; /* Raio de borda médio para botões e elementos menores */
+  --background-dark: #1a1a1c; /* Fundo mais escuro e sutil */
+  --card-background: #2a2a2c; /* Fundo dos cards ligeiramente mais claro e com mais contraste */
+  --text-primary: #ffffff; /* Texto principal branco puro */
+  --text-secondary: #c0c0c0; /* Texto secundário para descrições e detalhes */
+  --apple-blue: #007aff; /* Azul vibrante, padrão da Apple */
+  --apple-blue-dark: #005ce6; /* Azul ligeiramente mais escuro para hover */
+  --border-color: #404044; /* Borda mais discreta */
+  --shadow-color-light: rgba(0, 0, 0, 0.2); /* Sombra suave para a imagem */
+  --shadow-color-medium: rgba(0, 0, 0, 0.4); /* Sombra média para cards */
+  --shadow-color-strong: rgba(0, 0, 0, 0.6); /* Sombra mais forte para hover */
+  --border-radius-lg: 16px; /* Bordas mais arredondadas para cards */
+  --border-radius-md: 12px; /* Bordas arredondadas para botões e outros elementos */
 
-  /* Pilha de fontes de sistema para replicar o visual da Apple */
   --font-family-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
@@ -24,7 +25,7 @@ body {
   font-family: var(--font-family-system);
   background-color: var(--background-dark);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.5; /* Ajuste fino na altura da linha */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -42,7 +43,7 @@ a {
 /* Layout Geral da Página */
 .container {
   min-height: 100vh;
-  padding: 0 1.5rem;
+  padding: 0 2rem; /* Mais padding lateral */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -50,43 +51,47 @@ a {
 }
 
 .main {
-  padding: 6rem 0;
+  padding: 7rem 0; /* Mais padding superior/inferior */
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px; /* Aumenta a largura máxima para layouts mais amplos */
 }
 
+/* Título Principal */
 .title {
   margin: 0;
-  line-height: 1.2;
-  font-size: 4.5rem;
+  line-height: 1.1; /* Linha mais apertada para o título */
+  font-size: 5rem; /* Título ainda maior */
   text-align: center;
   color: var(--text-primary);
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em; /* Letter spacing mais agressivo, como na Apple */
 }
 
+/* Descrição Principal */
 .description {
   text-align: center;
-  line-height: 1.5;
-  font-size: 1.6rem;
-  margin-top: 1rem;
-  margin-bottom: 4rem;
+  line-height: 1.4;
+  font-size: 1.7rem; /* Descrição maior */
+  margin-top: 1.5rem; /* Mais espaçamento */
+  margin-bottom: 5rem; /* Mais espaçamento */
   color: var(--text-secondary);
-  max-width: 800px;
+  max-width: 900px; /* Aumenta a largura da descrição */
+  font-weight: 400; /* Garante que não está negrito */
 }
 
 /* Grid para os Cards de ISO */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 35px;
+  /* Minmax ligeiramente maior e mais flexível */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px; /* Mais espaçamento entre os cards */
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px; /* Ajusta largura do grid */
   margin-top: 3rem;
   padding: 0 20px;
 }
@@ -97,107 +102,108 @@ a {
   flex-direction: column;
   background-color: var(--card-background);
   border-radius: var(--border-radius-lg);
-  padding: 30px;
-  box-shadow: 0 8px 20px var(--shadow-color);
+  padding: 35px; /* Padding interno mais generoso */
+  box-shadow: 0 10px 25px var(--shadow-color-medium); /* Sombra mais refinada */
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   color: var(--text-primary);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-color); /* Borda sutil */
   justify-content: flex-start;
 }
 
 .isoCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px var(--shadow-color);
+  transform: translateY(-12px); /* Efeito de "subir" mais pronunciado */
+  box-shadow: 0 18px 35px var(--shadow-color-strong); /* Sombra mais forte no hover */
 }
 
 /* Seção Superior do Card (Imagem e Cabeçalho) */
 .cardTopSection {
   display: flex;
-  flex-direction: column; /* Organiza a imagem e o cabeçalho em coluna */
-  align-items: center; /* Centraliza a imagem e o cabeçalho horizontalmente */
-  margin-bottom: 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid rgba(var(--border-color), 0.5);
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; /* Mais espaço */
+  padding-bottom: 20px; /* Mais padding */
+  border-bottom: 1px solid rgba(var(--border-color), 0.7); /* Separador mais definido */
 }
 
 /* Container para a Imagem Circular */
 .isoImageContainer {
-  width: 100px; /* Define um tamanho para o container */
-  height: 100px;
-  border-radius: 50%; /* Torna o container circular */
-  overflow: hidden; /* Corta a imagem para caber no círculo */
-  background-color: #3a3a3c; /* Fundo para a imagem, caso ela não preencha */
+  width: 120px; /* Tamanho da imagem maior */
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #3a3a3c;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 15px; /* Espaço entre a imagem e o título */
-  border: 2px solid var(--apple-blue); /* Borda azul em torno da imagem */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra sutil para a imagem */
+  margin-bottom: 20px; /* Espaço entre a imagem e o título */
+  border: 3px solid var(--apple-blue); /* Borda mais grossa */
+  box-shadow: 0 6px 15px var(--shadow-color-light); /* Sombra mais sutil para a imagem */
 }
 
 .isoImage {
-  width: 100%; /* Garante que a imagem preencha o container */
+  width: 100%;
   height: 100%;
-  object-fit: contain; /* Ajusta a imagem dentro do container sem cortar o conteúdo */
-  padding: 5px; /* Pequeno padding interno para a imagem */
+  object-fit: contain;
+  padding: 8px; /* Mais padding interno para a imagem */
 }
 
 /* Cabeçalho do Card (Nome e Versão) */
 .cardHeader {
-  /* Não precisa de margin-bottom ou padding-bottom aqui, pois 'cardTopSection' já cuida disso */
-  border-bottom: none; /* Remove a borda inferior que estava aqui antes */
-  text-align: center; /* Centraliza o texto do cabeçalho */
-  width: 100%; /* Garante que o cabeçalho ocupe a largura total */
+  border-bottom: none;
+  text-align: center;
+  width: 100%;
 }
 
 .isoCard h3 {
   color: var(--apple-blue);
   margin: 0;
-  font-size: 2.2rem;
+  font-size: 2.4rem; /* Título do card maior */
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
 .versionBuild {
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* Tamanho maior */
   color: var(--text-secondary);
-  margin-top: 8px;
+  margin-top: 10px;
   font-weight: 500;
 }
 
 /* Corpo do Card (Descrição, Tamanho, Data, Checksum) */
 .cardBody {
   flex-grow: 1;
-  margin-top: 15px;
-  margin-bottom: 25px;
-  text-align: left;
+  margin-top: 20px; /* Mais espaço */
+  margin-bottom: 30px; /* Mais espaço */
+  text-align: left; /* Alinhamento à esquerda para detalhes */
 }
 
 .description {
-  font-size: 1.05rem;
-  margin-bottom: 15px;
-  line-height: 1.5;
+  font-size: 1.1rem; /* Descrição ligeiramente maior */
+  margin-bottom: 18px;
+  line-height: 1.6;
   color: var(--text-secondary);
+  font-weight: 400;
 }
 
 .size, .releaseDate, .checksum {
-  font-size: 0.95rem;
+  font-size: 1rem; /* Tamanho do texto para detalhes */
   color: var(--text-secondary);
-  margin-bottom: 5px;
-  line-height: 1.4;
+  margin-bottom: 6px;
+  line-height: 1.5;
 }
 
 .checksum {
-  margin-top: 10px;
+  margin-top: 15px; /* Mais espaço para o checksum */
 }
 
 .checksum code {
   font-family: monospace;
-  background-color: #3a3a3a;
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  color: #c0c0c0;
+  background-color: #38383a; /* Fundo mais escuro para o checksum */
+  padding: 4px 10px;
+  border-radius: 8px; /* Mais arredondado */
+  font-size: 0.9rem; /* Tamanho do checksum */
+  color: #d0d0d0; /* Cor mais clara para o checksum */
   display: inline-block;
   word-break: break-all;
 }
@@ -206,20 +212,22 @@ a {
 .downloadButton {
   background-color: var(--apple-blue);
   color: white;
-  padding: 14px 25px;
+  padding: 16px 30px; /* Botão maior */
   border-radius: var(--border-radius-md);
   text-align: center;
   font-weight: bold;
-  font-size: 1.15rem;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  font-size: 1.2rem; /* Texto do botão maior */
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease; /* Adiciona sombra na transição */
   margin-top: auto;
   display: block;
   width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra no botão */
 }
 
 .downloadButton:hover {
   background-color: var(--apple-blue-dark);
-  transform: translateY(-2px);
+  transform: translateY(-3px); /* Efeito mais sutil de "subir" no hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Sombra mais pronunciada no botão */
 }
 
 /* Rodapé */
@@ -227,12 +235,12 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2.5rem 0;
+  padding: 3rem 0; /* Mais padding no footer */
   border-top: 1px solid var(--border-color);
-  margin-top: 60px;
+  margin-top: 70px; /* Mais espaçamento do conteúdo principal */
   width: 100%;
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.95rem; /* Fonte um pouco maior */
 }
 
 .footer a {
@@ -241,42 +249,52 @@ a {
   align-items: center;
   flex-grow: 0;
   color: inherit;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: var(--text-primary); /* Destaca no hover */
 }
 
 .footer .logo {
-  height: 1.2em;
-  margin-left: 0.6rem;
-  filter: invert(1) brightness(0.8);
+  height: 1.3em; /* Logo um pouco maior */
+  margin-left: 0.8rem;
+  filter: invert(1) brightness(0.9); /* Ajusta o logo para o fundo escuro */
 }
 
 /* Responsividade: Ajustes para telas menores */
 @media (max-width: 768px) {
   .title {
-    font-size: 3rem;
+    font-size: 3.5rem; /* Título menor em telas médias */
   }
 
   .description {
-    font-size: 1.3rem;
-    padding: 0 10px;
+    font-size: 1.4rem;
+    padding: 0 15px;
   }
 
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
     padding: 0 15px;
-    gap: 25px;
+    gap: 30px;
   }
 
   .isoCard {
-    padding: 25px;
+    padding: 30px;
   }
 
   .isoCard h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+
+  .isoImageContainer {
+    width: 90px;
+    height: 90px;
   }
 
   .downloadButton {
-    padding: 12px 20px;
-    font-size: 1rem;
+    padding: 14px 25px;
+    font-size: 1.1rem;
   }
 }
 
@@ -286,14 +304,14 @@ a {
   }
 
   .main {
-    padding: 4rem 0;
+    padding: 5rem 0;
   }
 
   .title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 
   .description {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 }
