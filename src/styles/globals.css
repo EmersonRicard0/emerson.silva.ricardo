@@ -1,17 +1,16 @@
-/* src/styles/globals.css - Versão FINAL e CORRIGIDA - SEM ISOs */
+/* src/styles/globals.css - Design Portfólio - Paleta Clara e Profissional */
 
-/* Variáveis CSS para cores e fontes */
+/* Variáveis CSS para cores e fontes - Paleta CLARA */
 :root {
-  --background-dark: #1a1a1c;
-  --card-background: #2a2a2c;
-  --text-primary: #ffffff;
-  --text-secondary: #c0c0c0;
-  --apple-blue: #007aff;
-  --apple-blue-dark: #005ce6;
-  --border-color: #404044;
-  --shadow-color-light: rgba(0, 0, 0, 0.2);
-  --shadow-color-medium: rgba(0, 0, 0, 0.4);
-  --shadow-color-strong: rgba(0, 0, 0, 0.6);
+  --background-light: #f0f2f5; /* Fundo principal muito claro, quase branco */
+  --card-background-light: #ffffff; /* Fundo dos cards branco puro */
+  --text-dark-primary: #333333; /* Texto principal escuro */
+  --text-dark-secondary: #666666; /* Texto secundário escuro (para descrições) */
+  --accent-blue: #007bff; /* Azul vibrante para destaque (pode ser ajustado) */
+  --accent-blue-dark: #0056b3; /* Azul escuro para hover */
+  --border-light: #e0e0e0; /* Borda muito clara */
+  --shadow-light: rgba(0, 0, 0, 0.08); /* Sombra super sutil para elementos claros */
+  --shadow-medium: rgba(0, 0, 0, 0.15); /* Sombra média para hover */
   --border-radius-lg: 16px;
   --border-radius-md: 12px;
 
@@ -23,8 +22,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: var(--font-family-system);
-  background-color: var(--background-dark);
-  color: var(--text-primary);
+  background-color: var(--background-light); /* Fundo CLARO */
+  color: var(--text-dark-primary); /* Texto ESCURO */
   line-height: 1.5;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -40,9 +39,9 @@ a {
   box-sizing: border-box;
 }
 
-/* Fundo animado */
+/* Fundo animado - Adaptado para paleta clara */
 body {
-  background: linear-gradient(45deg, #1a1a1c, #2a2a2c, #1a1a1c);
+  background: linear-gradient(45deg, #f0f2f5, #e0e4e9, #f0f2f5); /* Gradiente claro e sutil */
   background-size: 300% 100%;
   animation: gradientAnimation 15s infinite alternate;
 }
@@ -66,10 +65,9 @@ body {
   align-items: center;
 }
 
-/* CLASSE .MAIN CORRIGIDA E CONSOLIDADA */
 .main {
-  padding-top: calc(7rem + 80px); /* Ajuste para empurrar o conteúdo para baixo do navbar. 80px é uma estimativa */
-  padding-bottom: 7rem; /* Mantém o padding inferior */
+  padding-top: calc(7rem + 80px); /* Ajuste para Navbar fixo */
+  padding-bottom: 7rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -79,7 +77,7 @@ body {
   max-width: 1600px;
 }
 
-/* Estilos para a seção Hero (Nova Página Inicial) */
+/* Estilos para a seção Hero (Página Inicial) */
 .hero {
   display: flex;
   flex-direction: column;
@@ -90,9 +88,9 @@ body {
 }
 
 .heroTitle {
-  font-size: 3rem;
+  font-size: 3rem; /* Tamanho ajustado para o hero */
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-dark-primary); /* Texto mais escuro */
   margin-top: 20px;
   margin-bottom: 15px;
   letter-spacing: -0.03em;
@@ -101,7 +99,7 @@ body {
 
 .heroSubtitle {
   font-size: 1.4rem;
-  color: var(--text-secondary);
+  color: var(--text-dark-secondary); /* Texto secundário escuro */
   max-width: 700px;
   line-height: 1.6;
   margin-bottom: 30px;
@@ -115,8 +113,8 @@ body {
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 25px;
-  border: 3px solid var(--apple-blue);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  border: 3px solid var(--accent-blue); /* Borda azul de destaque */
+  box-shadow: 0 8px 15px var(--shadow-medium); /* Sombra mais visível para a foto */
 }
 
 .profileImage {
@@ -126,46 +124,46 @@ body {
 }
 
 
-/* Título Principal das Páginas (Usado em Downloads, Resume, Projects, Contact) */
+/* Título Principal das Páginas (Downloads, Resume, Projects, Contact) */
 .title {
   margin: 0;
   line-height: 1.1;
   font-size: 5rem;
   text-align: center;
-  color: var(--text-primary);
+  color: var(--text-dark-primary); /* Texto mais escuro */
   font-weight: 700;
   letter-spacing: -0.04em;
 }
 
-/* Descrição Principal das Páginas (Usado em Downloads, Resume, Projects, Contact) */
+/* Descrição Principal das Páginas (Downloads, Resume, Projects, Contact) */
 .description {
   text-align: center;
   line-height: 1.4;
   font-size: 1.7rem;
   margin-top: 1.5rem;
   margin-bottom: 5rem;
-  color: var(--text-secondary);
+  color: var(--text-dark-secondary); /* Texto secundário escuro */
   max-width: 900px;
   font-weight: 400;
 }
 
-/* Grid para os Cards de Ação (na Home) - Pode ser reutilizado em Projects para grid de projetos */
-.callToActionGrid, .grid { /* Combinei as classes aqui para reutilizar estilos */
+/* Grid para os Cards de Ação (na Home) */
+.callToActionGrid, .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Mantive 300px para ação cards, adjust se precisar */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   width: 100%;
-  max-width: 1000px; /* Ajuste para caber 3 ou 4 cards por linha se necessário */
+  max-width: 1000px;
   margin-top: 4rem;
   padding: 0 20px;
 }
 
 /* Estilos para os Cards de Ação (Nova Página Inicial) */
 .actionCard {
-  background-color: rgba(42, 42, 44, 0.85);
+  background-color: var(--card-background-light); /* Fundo do card CLARO */
   border-radius: var(--border-radius-lg);
   padding: 30px;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 20px var(--shadow-light); /* Sombra sutil para cards claros */
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   text-align: center;
   display: flex;
@@ -173,16 +171,17 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  color: var(--text-primary);
+  color: var(--text-dark-primary); /* Texto do card ESCURO */
+  border: 1px solid var(--border-light); /* Borda muito clara */
 }
 
 .actionCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 18px 35px var(--shadow-color-strong);
+  box-shadow: 0 15px 30px var(--shadow-medium); /* Sombra mais visível no hover */
 }
 
 .actionCard h2 {
-  color: var(--apple-blue);
+  color: var(--accent-blue); /* Azul de destaque */
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 15px;
@@ -191,7 +190,7 @@ body {
 
 .actionCard p {
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: var(--text-dark-secondary); /* Texto secundário escuro */
   line-height: 1.4;
   margin-bottom: 0;
 }
@@ -203,10 +202,10 @@ body {
   justify-content: center;
   align-items: center;
   padding: 3rem 0;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-light); /* Borda clara */
   margin-top: 70px;
   width: 100%;
-  color: var(--text-secondary);
+  color: var(--text-dark-secondary); /* Texto escuro */
   font-size: 0.95rem;
 }
 
@@ -220,26 +219,27 @@ body {
 }
 
 .footer a:hover {
-  color: var(--text-primary);
+  color: var(--text-dark-primary); /* Fica mais escuro no hover */
 }
 
 .footer .logo {
   height: 1.3em;
   margin-left: 0.8rem;
-  filter: invert(1) brightness(0.9);
+  /* Inverter filtro para logo Vercel em fundo claro (ajustar conforme a logo) */
+  filter: invert(0) brightness(0.7); /* Se for logo Vercel padrão, escurece ela */
 }
 
 /* --- Estilos do Navbar --- */
 .navbar {
   width: 100%;
-  background-color: rgba(44, 44, 46, 0.9);
+  background-color: rgba(255, 255, 255, 0.9); /* Fundo CLARO sutilmente transparente */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
   padding: 1rem 0;
 }
 
@@ -255,7 +255,7 @@ body {
 .navbarBrand {
   font-size: 1.6rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-dark-primary); /* Texto ESCURO para a marca */
   letter-spacing: -0.02em;
   transition: opacity 0.2s ease;
 }
@@ -272,13 +272,13 @@ body {
 .navItem {
   font-size: 1.1rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: var(--text-dark-secondary); /* Links ESCUROS */
   position: relative;
   transition: color 0.2s ease;
 }
 
 .navItem:hover {
-  color: var(--text-primary);
+  color: var(--text-dark-primary); /* Fica mais escuro no hover */
 }
 
 .navItem::after {
@@ -289,7 +289,7 @@ body {
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background-color: var(--apple-blue);
+  background-color: var(--accent-blue); /* Azul de destaque */
   transition: width 0.2s ease-in-out;
 }
 
@@ -314,38 +314,39 @@ body {
 .hamburger .bar {
   width: 100%;
   height: 2px;
-  background-color: var(--text-primary);
+  background-color: var(--text-dark-primary); /* Barras ESCURAS */
   border-radius: 2px;
   transition: all 0.3s ease-in-out;
 }
 
 /* --- Estilos para as seções de Currículo (ResumePage) --- */
 .resumeSection {
-  background-color: var(--card-background);
+  background-color: var(--card-background-light); /* Fundo do card CLARO */
   border-radius: var(--border-radius-lg);
   padding: 30px;
   margin-bottom: 40px;
-  box-shadow: 0 8px 20px var(--shadow-color-medium);
+  box-shadow: 0 8px 20px var(--shadow-light); /* Sombra mais sutil */
   width: 100%;
   max-width: 900px;
   text-align: left;
+  border: 1px solid var(--border-light); /* Borda clara */
 }
 
 .resumeSection h2 {
-  color: var(--apple-blue);
+  color: var(--accent-blue); /* Azul de destaque */
   font-size: 2.2rem;
   margin-top: 0;
   margin-bottom: 25px;
   text-align: center;
   letter-spacing: -0.02em;
   padding-bottom: 15px;
-  border-bottom: 1px solid rgba(var(--border-color), 0.7);
+  border-bottom: 1px solid rgba(var(--border-light), 0.7); /* Borda clara */
 }
 
 .resumeSection p, .resumeSection li {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: var(--text-dark-secondary); /* Texto escuro */
   margin-bottom: 10px;
 }
 
@@ -362,7 +363,7 @@ body {
 .experienceBlock, .educationBlock {
   margin-bottom: 30px;
   padding-bottom: 20px;
-  border-bottom: 1px dashed rgba(var(--border-color), 0.5);
+  border-bottom: 1px dashed rgba(var(--border-light), 0.5); /* Borda tracejada clara */
 }
 
 .experienceBlock:last-child, .educationBlock:last-child {
@@ -372,14 +373,14 @@ body {
 }
 
 .experienceBlock h3, .educationBlock h3 {
-  color: var(--text-primary);
+  color: var(--text-dark-primary); /* Texto escuro */
   font-size: 1.5rem;
   margin-bottom: 5px;
   font-weight: 600;
 }
 
 .roleBlock h4 {
-  color: var(--apple-blue);
+  color: var(--accent-blue); /* Azul de destaque */
   font-size: 1.3rem;
   margin-top: 15px;
   margin-bottom: 5px;
@@ -388,7 +389,7 @@ body {
 
 .periodLocation {
   font-size: 0.95rem;
-  color: var(--text-secondary);
+  color: var(--text-dark-secondary); /* Texto escuro */
   font-style: italic;
   margin-bottom: 15px;
 }
@@ -402,7 +403,7 @@ body {
 }
 
 .skillTag {
-  background-color: var(--apple-blue);
+  background-color: var(--accent-blue); /* Azul de destaque */
   color: white;
   padding: 8px 15px;
   border-radius: 20px;
@@ -412,12 +413,13 @@ body {
 }
 
 .contactLink {
-  color: var(--apple-blue) !important;
+  color: var(--accent-blue) !important;
   text-decoration: underline !important;
 }
 .contactLink:hover {
-  color: var(--apple-blue-dark) !important;
+  color: var(--accent-blue-dark) !important;
 }
+
 
 /* Responsividade Geral */
 @media (max-width: 1024px) {
@@ -448,11 +450,11 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: rgba(44, 44, 46, 0.95);
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo CLARO para o menu aberto */
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 1rem 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra suave */
     transition: all 0.3s ease-in-out;
     opacity: 0;
     visibility: hidden;
@@ -474,7 +476,7 @@ body {
     content: none;
   }
   .navItem:active {
-    background-color: rgba(var(--apple-blue), 0.2);
+    background-color: rgba(var(--accent-blue), 0.1); /* Feedback tátil para mobile CLARO */
   }
   .hamburger {
     display: flex;
