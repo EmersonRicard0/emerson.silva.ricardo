@@ -1,30 +1,30 @@
-/* src/styles/globals.css - Design Portfólio - Paleta Clara e Profissional */
+/* src/styles/globals.css - Portfólio Emerson Ricardo - Design Final */
 
-/* Variáveis CSS para cores e fontes - Paleta CLARA */
+/* Variáveis CSS para cores e fontes - Paleta Profissional */
 :root {
-  --background-light: #f0f2f5; /* Fundo principal muito claro, quase branco */
-  --card-background-light: #ffffff; /* Fundo dos cards branco puro */
-  --text-dark-primary: #333333; /* Texto principal escuro */
-  --text-dark-secondary: #666666; /* Texto secundário escuro (para descrições) */
-  --accent-blue: #007bff; /* Azul vibrante para destaque (pode ser ajustado) */
-  --accent-blue-dark: #0056b3; /* Azul escuro para hover */
-  --border-light: #e0e0e0; /* Borda muito clara */
-  --shadow-light: rgba(0, 0, 0, 0.08); /* Sombra super sutil para elementos claros */
-  --shadow-medium: rgba(0, 0, 0, 0.15); /* Sombra média para hover */
-  --border-radius-lg: 16px;
-  --border-radius-md: 12px;
-
+  --background-main: #f0f2f5; /* Fundo principal claro */
+  --background-secondary: #ffffff; /* Fundo de cards/seções brancos */
+  --text-primary-dark: #2c3e50; /* Texto principal escuro (azul-cinzento) */
+  --text-secondary-dark: #7f8c8d; /* Texto secundário escuro (cinza mais suave) */
+  --accent-blue-linkedin: #0077B5; /* Azul do LinkedIn para destaque */
+  --accent-blue-linkedin-dark: #005f91; /* Azul mais escuro para hover */
+  --border-light: #e0e4eb; /* Borda muito sutil */
+  --shadow-extra-light: rgba(0, 0, 0, 0.05); /* Sombra quase invisível */
+  --shadow-light: rgba(0, 0, 0, 0.1); /* Sombra para elementos menores */
+  --shadow-medium: rgba(0, 0, 0, 0.15); /* Sombra para cards */
+  --shadow-strong: rgba(0, 0, 0, 0.25); /* Sombra para hover */
+  --border-radius-lg: 12px; /* Arredondamento dos cantos */
+  --border-radius-md: 8px;
   --font-family-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-html,
-body {
+html, body {
   padding: 0;
   margin: 0;
   font-family: var(--font-family-system);
-  background-color: var(--background-light); /* Fundo CLARO */
-  color: var(--text-dark-primary); /* Texto ESCURO */
-  line-height: 1.5;
+  background-color: var(--background-main);
+  color: var(--text-primary-dark);
+  line-height: 1.6;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,26 +39,23 @@ a {
   box-sizing: border-box;
 }
 
-/* Fundo animado - Adaptado para paleta clara */
+/* Fundo animado - Gradiente de tons de cinza/azul claro */
 body {
-  background: linear-gradient(45deg, #f0f2f5, #e0e4e9, #f0f2f5); /* Gradiente claro e sutil */
-  background-size: 300% 100%;
-  animation: gradientAnimation 15s infinite alternate;
+  background: linear-gradient(135deg, #e0e4eb, #f0f2f5, #e0e4eb);
+  background-size: 300% 300%;
+  animation: gradientAnimation 20s ease infinite alternate;
 }
 
 @keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Layout Geral da Página */
 .container {
   min-height: 100vh;
-  padding: 0 2rem;
+  padding: 0; /* Removendo padding aqui para o banner ir de ponta a ponta */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -66,55 +63,74 @@ body {
 }
 
 .main {
-  padding-top: calc(7rem + 80px); /* Ajuste para Navbar fixo */
-  padding-bottom: 7rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  max-width: 1600px;
-}
-
-/* Estilos para a seção Hero (Página Inicial) */
-.hero {
+  max-width: 100%; /* Permite que o banner vá de ponta a ponta */
+  padding-top: calc(5rem + 80px); /* Ajuste para Navbar fixo */
+  padding-bottom: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* --- Seção de Herói (Banner e Detalhes do Perfil) --- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Altura do banner, ajuste conforme sua imagem */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* Alinha o conteúdo ao fundo do banner */
+  margin-bottom: 80px; /* Espaço para o card de detalhes flutuar abaixo */
+  overflow: hidden; /* Garante que a imagem de capa não transborde */
+}
+
+.hero-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Fica abaixo dos detalhes do perfil */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(240, 242, 245, 0.8), rgba(240, 242, 245, 0.4)); /* Gradiente para o fundo claro */
+  z-index: 2; /* Fica acima do banner, mas abaixo dos detalhes */
+}
+
+.profile-details-card {
+  position: relative; /* Para flutuar acima do banner */
+  background-color: var(--background-secondary);
+  border-radius: var(--border-radius-lg);
+  padding: 30px 40px;
+  box-shadow: 0 10px 30px var(--shadow-medium);
   text-align: center;
-  margin-bottom: 60px;
-  padding: 20px 0;
-}
-
-.heroTitle {
-  font-size: 3rem; /* Tamanho ajustado para o hero */
-  font-weight: 600;
-  color: var(--text-dark-primary); /* Texto mais escuro */
-  margin-top: 20px;
-  margin-bottom: 15px;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-}
-
-.heroSubtitle {
-  font-size: 1.4rem;
-  color: var(--text-dark-secondary); /* Texto secundário escuro */
+  z-index: 3; /* Garante que esteja acima do banner e overlay */
+  width: 90%;
   max-width: 700px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  font-weight: 400;
+  transform: translateY(50%); /* Ajusta para flutuar metade para fora do banner */
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Imagem de Perfil na Página Inicial */
 .profileImageContainer {
-  width: 150px;
-  height: 150px;
+  width: 120px; /* Tamanho da sua foto de perfil */
+  height: 120px;
   border-radius: 50%;
   overflow: hidden;
-  margin-bottom: 25px;
-  border: 3px solid var(--accent-blue); /* Borda azul de destaque */
-  box-shadow: 0 8px 15px var(--shadow-medium); /* Sombra mais visível para a foto */
+  margin-top: -80px; /* Puxa a foto para cima, sobre o banner */
+  margin-bottom: 20px;
+  border: 4px solid var(--background-secondary); /* Borda branca ao redor da foto */
+  box-shadow: 0 5px 15px var(--shadow-medium);
+  z-index: 4; /* Garante que a foto esteja acima de tudo */
 }
 
 .profileImage {
@@ -123,90 +139,131 @@ body {
   object-fit: cover;
 }
 
-
-/* Título Principal das Páginas (Downloads, Resume, Projects, Contact) */
-.title {
-  margin: 0;
-  line-height: 1.1;
-  font-size: 5rem;
-  text-align: center;
-  color: var(--text-dark-primary); /* Texto mais escuro */
+.profile-name {
+  font-size: 2.2rem;
   font-weight: 700;
-  letter-spacing: -0.04em;
+  color: var(--text-primary-dark);
+  margin-bottom: 5px;
+  letter-spacing: -0.02em;
 }
 
-/* Descrição Principal das Páginas (Downloads, Resume, Projects, Contact) */
-.description {
-  text-align: center;
-  line-height: 1.4;
-  font-size: 1.7rem;
-  margin-top: 1.5rem;
-  margin-bottom: 5rem;
-  color: var(--text-dark-secondary); /* Texto secundário escuro */
-  max-width: 900px;
+.profile-title {
+  font-size: 1.2rem;
+  color: var(--text-secondary-dark);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.profile-skills {
+  font-size: 1.1rem;
+  color: var(--text-secondary-dark);
+  margin-bottom: 20px;
   font-weight: 400;
 }
 
-/* Grid para os Cards de Ação (na Home) */
-.callToActionGrid, .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  width: 100%;
-  max-width: 1000px;
-  margin-top: 4rem;
-  padding: 0 20px;
+.profile-contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px 30px;
+  margin-bottom: 25px;
+  color: var(--text-secondary-dark);
+  font-size: 1rem;
+}
+.profile-contact-info p span {
+  margin-right: 8px;
+  color: var(--accent-blue-linkedin); /* Ícones de contato */
 }
 
-/* Estilos para os Cards de Ação (Nova Página Inicial) */
+.linkedin-button {
+  background-color: var(--accent-blue-linkedin);
+  color: white;
+  padding: 12px 25px;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 119, 181, 0.3); /* Sombra para o botão LinkedIn */
+}
+
+.linkedin-button:hover {
+  background-color: var(--accent-blue-linkedin-dark);
+  box-shadow: 0 6px 15px rgba(0, 119, 181, 0.4);
+}
+
+/* --- Seções Gerais de Conteúdo (Cards de Ação, Currículo, Projetos) --- */
+.section-container {
+  width: 100%;
+  max-width: 1200px; /* Largura máxima para conteúdo central */
+  padding: 0 20px;
+  margin-top: 50px; /* Espaço entre o hero-section e a primeira seção de conteúdo */
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary-dark);
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.callToActionGrid, .grid { /* Reutiliza grid para cards de ação e talvez projetos/recursos */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajustado para 3 cards na linha */
+  gap: 30px;
+  margin-top: 20px;
+}
+
 .actionCard {
-  background-color: var(--card-background-light); /* Fundo do card CLARO */
+  background-color: var(--background-secondary);
   border-radius: var(--border-radius-lg);
   padding: 30px;
-  box-shadow: 0 8px 20px var(--shadow-light); /* Sombra sutil para cards claros */
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 8px 25px var(--shadow-light); /* Sombra mais visível para cards claros */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
-  color: var(--text-dark-primary); /* Texto do card ESCURO */
-  border: 1px solid var(--border-light); /* Borda muito clara */
+  border: 1px solid var(--border-light);
 }
 
 .actionCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px var(--shadow-medium); /* Sombra mais visível no hover */
+  box-shadow: 0 15px 35px var(--shadow-medium);
 }
 
 .actionCard h2 {
-  color: var(--accent-blue); /* Azul de destaque */
-  font-size: 2rem;
+  color: var(--accent-blue-linkedin);
+  font-size: 1.8rem;
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 15px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .actionCard p {
-  font-size: 1.1rem;
-  color: var(--text-dark-secondary); /* Texto secundário escuro */
-  line-height: 1.4;
+  font-size: 1rem;
+  color: var(--text-secondary-dark);
+  line-height: 1.5;
   margin-bottom: 0;
 }
 
-
 /* Rodapé */
 .footer {
+  width: 100%;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border-light);
+  margin-top: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3rem 0;
-  border-top: 1px solid var(--border-light); /* Borda clara */
-  margin-top: 70px;
-  width: 100%;
-  color: var(--text-dark-secondary); /* Texto escuro */
-  font-size: 0.95rem;
+  color: var(--text-secondary-dark);
+  font-size: 0.9rem;
 }
 
 .footer a {
@@ -219,27 +276,26 @@ body {
 }
 
 .footer a:hover {
-  color: var(--text-dark-primary); /* Fica mais escuro no hover */
+  color: var(--text-primary-dark);
 }
 
 .footer .logo {
   height: 1.3em;
   margin-left: 0.8rem;
-  /* Inverter filtro para logo Vercel em fundo claro (ajustar conforme a logo) */
-  filter: invert(0) brightness(0.7); /* Se for logo Vercel padrão, escurece ela */
+  filter: none; /* Remove filtro para logo Vercel em fundo claro, se for o caso */
 }
 
 /* --- Estilos do Navbar --- */
 .navbar {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.9); /* Fundo CLARO sutilmente transparente */
+  background-color: rgba(255, 255, 255, 0.95); /* Fundo branco semitransparente */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+  box-shadow: 0 2px 10px var(--shadow-extra-light); /* Sombra bem suave */
   padding: 1rem 0;
 }
 
@@ -255,7 +311,7 @@ body {
 .navbarBrand {
   font-size: 1.6rem;
   font-weight: 600;
-  color: var(--text-dark-primary); /* Texto ESCURO para a marca */
+  color: var(--text-primary-dark);
   letter-spacing: -0.02em;
   transition: opacity 0.2s ease;
 }
@@ -272,13 +328,13 @@ body {
 .navItem {
   font-size: 1.1rem;
   font-weight: 500;
-  color: var(--text-dark-secondary); /* Links ESCUROS */
+  color: var(--text-secondary-dark);
   position: relative;
   transition: color 0.2s ease;
 }
 
 .navItem:hover {
-  color: var(--text-dark-primary); /* Fica mais escuro no hover */
+  color: var(--text-primary-dark);
 }
 
 .navItem::after {
@@ -289,7 +345,7 @@ body {
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background-color: var(--accent-blue); /* Azul de destaque */
+  background-color: var(--accent-blue-linkedin);
   transition: width 0.2s ease-in-out;
 }
 
@@ -314,56 +370,57 @@ body {
 .hamburger .bar {
   width: 100%;
   height: 2px;
-  background-color: var(--text-dark-primary); /* Barras ESCURAS */
+  background-color: var(--text-primary-dark);
   border-radius: 2px;
   transition: all 0.3s ease-in-out;
 }
 
 /* --- Estilos para as seções de Currículo (ResumePage) --- */
 .resumeSection {
-  background-color: var(--card-background-light); /* Fundo do card CLARO */
+  background-color: var(--background-secondary);
   border-radius: var(--border-radius-lg);
   padding: 30px;
   margin-bottom: 40px;
-  box-shadow: 0 8px 20px var(--shadow-light); /* Sombra mais sutil */
+  box-shadow: 0 8px 25px var(--shadow-light);
   width: 100%;
   max-width: 900px;
   text-align: left;
-  border: 1px solid var(--border-light); /* Borda clara */
+  border: 1px solid var(--border-light);
 }
 
 .resumeSection h2 {
-  color: var(--accent-blue); /* Azul de destaque */
-  font-size: 2.2rem;
+  color: var(--accent-blue-linkedin);
+  font-size: 2rem; /* Título da seção */
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 25px;
   text-align: center;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   padding-bottom: 15px;
-  border-bottom: 1px solid rgba(var(--border-light), 0.7); /* Borda clara */
+  border-bottom: 1px solid var(--border-light);
 }
 
 .resumeSection p, .resumeSection li {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--text-dark-secondary); /* Texto escuro */
+  color: var(--text-secondary-dark);
   margin-bottom: 10px;
 }
 
 .resumeSection ul {
   list-style-type: disc;
-  margin-left: 20px;
+  margin-left: 25px; /* Mais indentação */
   padding-left: 0;
 }
 
 .resumeSection li {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .experienceBlock, .educationBlock {
   margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px dashed rgba(var(--border-light), 0.5); /* Borda tracejada clara */
+  padding-bottom: 25px;
+  border-bottom: 1px dashed var(--border-light);
 }
 
 .experienceBlock:last-child, .educationBlock:last-child {
@@ -373,14 +430,14 @@ body {
 }
 
 .experienceBlock h3, .educationBlock h3 {
-  color: var(--text-dark-primary); /* Texto escuro */
-  font-size: 1.5rem;
+  color: var(--text-primary-dark);
+  font-size: 1.6rem;
   margin-bottom: 5px;
   font-weight: 600;
 }
 
 .roleBlock h4 {
-  color: var(--accent-blue); /* Azul de destaque */
+  color: var(--accent-blue-linkedin);
   font-size: 1.3rem;
   margin-top: 15px;
   margin-bottom: 5px;
@@ -389,7 +446,7 @@ body {
 
 .periodLocation {
   font-size: 0.95rem;
-  color: var(--text-dark-secondary); /* Texto escuro */
+  color: var(--text-secondary-dark);
   font-style: italic;
   margin-bottom: 15px;
 }
@@ -397,45 +454,70 @@ body {
 .skillsGrid {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px; /* Mais espaçamento entre as tags */
   justify-content: center;
   margin-top: 20px;
 }
 
 .skillTag {
-  background-color: var(--accent-blue); /* Azul de destaque */
-  color: white;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
+  background-color: #e0e4eb; /* Fundo mais claro para tags de habilidade */
+  color: var(--text-primary-dark); /* Texto escuro para tags */
+  padding: 8px 18px;
+  border-radius: 25px; /* Mais arredondado */
+  font-size: 0.95rem;
   font-weight: 500;
   white-space: nowrap;
+  border: 1px solid var(--border-light);
 }
 
 .contactLink {
-  color: var(--accent-blue) !important;
+  color: var(--accent-blue-linkedin) !important;
   text-decoration: underline !important;
 }
 .contactLink:hover {
-  color: var(--accent-blue-dark) !important;
+  color: var(--accent-blue-linkedin-dark) !important;
 }
-
 
 /* Responsividade Geral */
 @media (max-width: 1024px) {
-  .title {
-    font-size: 4rem;
-  }
-  .description {
-    font-size: 1.5rem;
-  }
   .main {
-    padding-top: calc(6rem + 80px);
-    padding-bottom: 6rem;
+    padding-top: calc(5rem + 80px);
+    padding-bottom: 5rem;
   }
-  .grid, .callToActionGrid {
-    gap: 25px;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  .hero-section {
+    height: 250px; /* Altura menor em telas médias */
+    margin-bottom: 60px;
+  }
+  .profile-details-card {
+    padding: 25px 30px;
+    width: 95%;
+  }
+  .profileImageContainer {
+    width: 100px;
+    height: 100px;
+    margin-top: -60px;
+  }
+  .profile-name {
+    font-size: 2rem;
+  }
+  .profile-title, .profile-skills {
+    font-size: 1.1rem;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+  .callToActionGrid, .grid {
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .actionCard h2 {
+    font-size: 1.6rem;
+  }
+  .actionCard p {
+    font-size: 0.95rem;
+  }
+  .resumeSection h2 {
+    font-size: 1.8rem;
   }
 }
 
@@ -450,11 +532,11 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95); /* Fundo CLARO para o menu aberto */
+    background-color: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 1rem 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
     opacity: 0;
     visibility: hidden;
@@ -476,7 +558,7 @@ body {
     content: none;
   }
   .navItem:active {
-    background-color: rgba(var(--accent-blue), 0.1); /* Feedback tátil para mobile CLARO */
+    background-color: rgba(0, 119, 181, 0.1);
   }
   .hamburger {
     display: flex;
@@ -491,67 +573,77 @@ body {
     transform: translateY(-7px) rotate(-45deg);
   }
 
-  /* Ajustes para telas médias/pequenas */
+  /* Ajustes para telas muito pequenas */
   .title {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
   .description {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     padding: 0 15px;
   }
-  .heroTitle {
-    font-size: 2.8rem;
+  .hero-section {
+    height: 200px; /* Altura mínima em mobile */
   }
-  .heroSubtitle {
-    font-size: 1.2rem;
+  .profile-details-card {
+    padding: 20px;
   }
-  .profileImageContainer {
-    width: 100px;
-    height: 100px;
-  }
-  .isoCard { /* Mantido caso você queira reutilizar este estilo em projects */
-    padding: 30px;
-  }
-  .isoCard h3 { /* Mantido caso você queira reutilizar este estilo em projects */
-    font-size: 2rem;
-  }
-  .isoImageContainer { /* Mantido caso você queira reutilizar este estilo em projects */
-    width: 90px;
-    height: 90px;
-  }
-  .downloadButton { /* Mantido caso você queira reutilizar este estilo em projects */
-    padding: 14px 25px;
-    font-size: 1.1rem;
-  }
-  .resumeSection {
-    padding: 25px;
-  }
-  .resumeSection h2 {
+  .profile-name {
     font-size: 1.8rem;
+  }
+  .profile-title, .profile-skills {
+    font-size: 1rem;
+  }
+  .profile-contact-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .actionCard h2 {
+    font-size: 1.5rem;
+  }
+  .actionCard p {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
   .container {
+    padding: 0; /* Remove padding lateral para telas muito pequenas */
+  }
+  .navbarContainer {
     padding: 0 1rem;
   }
   .main {
-    padding-top: calc(5rem + 80px);
-    padding-bottom: 5rem;
+    padding-top: calc(4rem + 80px);
+    padding-bottom: 4rem;
   }
-  .title {
-    font-size: 2.8rem;
+  .hero-banner {
+    background-position: center top !important; /* Ajusta background para mobile */
   }
-  .description {
-    font-size: 1.2rem;
+  .profile-details-card {
+    padding: 15px;
   }
-  .heroTitle {
-    font-size: 2.2rem;
+  .profile-name {
+    font-size: 1.6rem;
   }
-  .heroSubtitle {
-    font-size: 1rem;
+  .profile-title {
+    font-size: 0.9rem;
   }
-  .callToActionGrid {
+  .profile-skills {
+    font-size: 0.85rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .callToActionGrid, .grid {
     padding: 0 10px;
+  }
+  .resumeSection {
+    padding: 15px;
+  }
+  .resumeSection h2 {
+    font-size: 1.5rem;
+  }
+  .experienceBlock h3, .educationBlock h3 {
+    font-size: 1.2rem;
   }
 }
