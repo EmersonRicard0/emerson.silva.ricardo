@@ -16,7 +16,7 @@ export default function HomePage() {
           <div className="profileImageContainer">
             {/* Certifique-se de que sua foto de perfil está em public/images/ */}
             <Image
-              src="https://media.canva.com/v2/image-resize/format:JPG/height:550/quality:92/uri:..."
+              src="https://avatars.githubusercontent.com/u/92190123?v=4"
                width={150}
                height={150}
                className="profileImage"
