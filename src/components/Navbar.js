@@ -1,36 +1,41 @@
 // src/components/Navbar.js
 import React, { useState } from 'react';
-import Link from 'next/link'; // Importa o componente Link do Next.js para navegação
+import Link from 'next/link';
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false); // Estado para controlar se o menu mobile está aberto
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="navbar">
       <div className="navbarContainer">
         <Link href="/" className="navbarBrand">
-          {/* Você pode substituir 'Repositorio ISOs' por um logo se tiver */}
-          Repositório de ISOs
+          {/* Você pode colocar seu nome aqui ou um logo textual */}
+          Emerson Ricardo
         </Link>
 
-        <div className={`navLinks ${isOpen ? 'open' : ''}`}>
-          <Link href="/" className="navItem" onClick={() => setIsOpen(false)}>
-            Repositório
-          </Link>
-          <Link href="/about" className="navItem" onClick={() => setIsOpen(false)}>
-            Sobre
-          </Link>
-          <Link href="/support" className="navItem" onClick={() => setIsOpen(false)}>
-            Suporte
-          </Link>
-        </div>
-
-        {/* Botão Hambúrguer para Mobile */}
         <button className="hamburger" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle navigation">
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
         </button>
+
+        <div className={`navLinks ${isOpen ? 'open' : ''}`}>
+          <Link href="/" className="navItem" onClick={() => setIsOpen(false)}>
+            Início
+          </Link>
+          <Link href="/projects" className="navItem" onClick={() => setIsOpen(false)}>
+            Projetos
+          </Link>
+          <Link href="/resume" className="navItem" onClick={() => setIsOpen(false)}>
+            Currículo
+          </Link>
+          <Link href="/downloads" className="navItem" onClick={() => setIsOpen(false)}>
+            Recursos
+          </Link>
+          <Link href="/contact" className="navItem" onClick={() => setIsOpen(false)}>
+            Contato
+          </Link>
+        </div>
       </div>
     </nav>
   );

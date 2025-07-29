@@ -1,8 +1,7 @@
 // src/pages/index.js (Nova Página Inicial do Portfólio)
 import Head from 'next/head';
 import React from 'react';
-// Se quiser, pode adicionar sua foto de perfil aqui e mais texto de introdução
-// import Image from 'next/image'; // Para otimizar imagens, se for usar
+import Image from 'next/image';
 
 export default function HomePage() {
   return (
@@ -13,21 +12,22 @@ export default function HomePage() {
       </Head>
 
       <main className="main">
-        {/* Se quiser uma foto de perfil */}
-        {/* <div className="profileImageContainer">
+        <div className="hero">
+          <div className="profileImageContainer">
+            {/* Certifique-se de que sua foto de perfil está em public/images/ */}
             <Image
-              src="/images/your_profile_photo.jpg" // Coloque sua foto em public/images/
+              src="/images/emerson_perfil.jpg"
               alt="Emerson Silva Ricardo"
               width={150}
               height={150}
               className="profileImage"
             />
-        </div> */}
-
-        <h1 className="title">Olá, eu sou o Emerson Silva Ricardo.</h1>
-        <p className="description">
-          Analista de Redes e Infraestrutura, apaixonado por Linux, Datacom e soluções de monitoramento. Explore meus projetos e recursos de boas práticas aqui.
-        </p>
+          </div>
+          <h1 className="heroTitle">Olá, eu sou o Emerson Silva Ricardo.</h1>
+          <p className="heroSubtitle">
+            Analista de Redes e Infraestrutura, apaixonado por Linux, Datacom e soluções de monitoramento. Explore meus projetos e recursos de boas práticas aqui.
+          </p>
+        </div>
 
         <div className="callToActionGrid">
           <a href="/projects" className="actionCard">
@@ -41,6 +41,10 @@ export default function HomePage() {
           <a href="/resume" className="actionCard">
             <h2>Meu Currículo &rarr;</h2>
             <p>Conheça minha experiência profissional e formação acadêmica.</p>
+          </a>
+          <a href="/contact" className="actionCard">
+            <h2>Fale Comigo &rarr;</h2>
+            <p>Entre em contato para oportunidades de trabalho ou parcerias.</p>
           </a>
         </div>
       </main>

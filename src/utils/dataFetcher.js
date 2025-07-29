@@ -5,7 +5,7 @@ import fs from 'fs/promises';
 export async function getIsosData() {
   try {
     const jsonDirectory = path.join(process.cwd(), 'public');
-    const filePath = path.join(jsonDirectory, 'isos.json'); // Ou downloads.json no futuro
+    const filePath = path.join(jsonDirectory, 'isos.json');
 
     const fileContents = await fs.readFile(filePath, 'utf8');
     const data = JSON.parse(fileContents);
@@ -28,6 +28,22 @@ export async function getResumeData() {
 
   } catch (error) {
     console.error("Falha ao buscar dados do currículo (verifique public/resumeData.json e caminho):", error);
-    return null; // Retorna null em caso de erro para a página de currículo
+    return null;
   }
 }
+
+// Futuramente, você pode adicionar funções para buscar dados de projetos, blogs, etc.
+/*
+export async function getProjectsData() {
+  try {
+    const jsonDirectory = path.join(process.cwd(), 'public');
+    const filePath = path.join(jsonDirectory, 'projectsData.json');
+    const fileContents = await fs.readFile(filePath, 'utf8');
+    const data = JSON.parse(fileContents);
+    return data;
+  } catch (error) {
+    console.error("Falha ao buscar dados dos projetos:", error);
+    return [];
+  }
+}
+*/

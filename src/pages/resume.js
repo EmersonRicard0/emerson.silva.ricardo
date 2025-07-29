@@ -1,7 +1,7 @@
 // src/pages/resume.js
 import Head from 'next/head';
 import React from 'react';
-import { getResumeData } from '../utils/dataFetcher'; // Vamos atualizar o dataFetcher para isso
+import { getResumeData } from '../utils/dataFetcher';
 
 export async function getStaticProps() {
   const resume = await getResumeData();
@@ -9,7 +9,7 @@ export async function getStaticProps() {
     props: {
       resume,
     },
-    revalidate: 60 // Revalida a cada 60 segundos
+    revalidate: 60
   };
 }
 

@@ -1,65 +1,422 @@
-/* Estilos para a nova página inicial (index.js) */
-.profileImageContainer {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
+/* src/styles/globals.css - Design "Apple-like" - Versão FINAL E COMPLETA */
+
+/* Variáveis CSS para cores e fontes */
+:root {
+  --background-dark: #1a1a1c; /* Fundo mais escuro e sutil */
+  --card-background: #2a2a2c; /* Fundo dos cards ligeiramente mais claro e com mais contraste */
+  --text-primary: #ffffff; /* Texto principal branco puro */
+  --text-secondary: #c0c0c0; /* Texto secundário para descrições e detalhes */
+  --apple-blue: #007aff; /* Azul vibrante, padrão da Apple */
+  --apple-blue-dark: #005ce6; /* Azul ligeiramente mais escuro para hover */
+  --border-color: #404044; /* Borda mais discreta */
+  --shadow-color-light: rgba(0, 0, 0, 0.2); /* Sombra suave para a imagem */
+  --shadow-color-medium: rgba(0, 0, 0, 0.4); /* Sombra média para cards */
+  --shadow-color-strong: rgba(0, 0, 0, 0.6); /* Sombra mais forte para hover */
+  --border-radius-lg: 16px; /* Bordas mais arredondadas para cards */
+  --border-radius-md: 12px; /* Bordas arredondadas para botões e outros elementos */
+
+  --font-family-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family-system);
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Fundo animado */
+body {
+  background: linear-gradient(45deg, #1a1a1c, #2a2a2c, #1a1a1c);
+  background-size: 300% 100%;
+  animation: gradientAnimation 15s infinite alternate;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Layout Geral da Página */
+.container {
+  min-height: 100vh;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* CLASSE .MAIN CORRIGIDA E CONSOLIDADA */
+.main {
+  padding-top: calc(7rem + 80px); /* Ajuste para empurrar o conteúdo para baixo do navbar. 80px é uma estimativa */
+  padding-bottom: 7rem; /* Mantém o padding inferior */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1600px;
+}
+
+/* Estilos para a seção Hero (Nova Página Inicial) */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 60px; /* Espaçamento entre o hero e o grid de cards de ação */
+  padding: 20px 0;
+}
+
+.heroTitle {
+  font-size: 3rem; /* Tamanho ajustado para o hero */
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 20px;
+  margin-bottom: 15px;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.heroSubtitle {
+  font-size: 1.4rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  line-height: 1.6;
   margin-bottom: 30px;
-  border: 4px solid var(--apple-blue);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  font-weight: 400;
+}
+
+/* Imagem de Perfil na Página Inicial */
+.profileImageContainer {
+  width: 150px; /* Tamanho da imagem de perfil */
+  height: 150px;
+  border-radius: 50%; /* Circular */
+  overflow: hidden;
+  margin-bottom: 25px;
+  border: 3px solid var(--apple-blue); /* Borda azul ao redor da foto */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Sombra para a foto */
 }
 
 .profileImage {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Garante que a imagem preencha o container */
 }
 
-.callToActionGrid {
+
+/* Título Principal das Páginas (Usado em Downloads, Resume, Projects, Contact) */
+.title {
+  margin: 0;
+  line-height: 1.1;
+  font-size: 5rem;
+  text-align: center;
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+/* Descrição Principal das Páginas (Usado em Downloads, Resume, Projects, Contact) */
+.description {
+  text-align: center;
+  line-height: 1.4;
+  font-size: 1.7rem;
+  margin-top: 1.5rem;
+  margin-bottom: 5rem;
+  color: var(--text-secondary);
+  max-width: 900px;
+  font-weight: 400;
+}
+
+/* Grid para os Cards de ISO (em Downloads) */
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
   width: 100%;
-  max-width: 1000px;
-  margin-top: 4rem;
+  max-width: 1400px;
+  margin-top: 3rem;
   padding: 0 20px;
 }
 
-.actionCard {
-  background-color: var(--card-background);
-  border-radius: var(--border-radius-lg);
-  padding: 30px;
-  box-shadow: 0 8px 20px var(--shadow-color-medium);
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  text-align: center;
+/* Estilos para o Card Individual de ISO */
+.isoCard {
   display: flex;
   flex-direction: column;
+  background-color: var(--card-background);
+  border-radius: var(--border-radius-lg);
+  padding: 35px;
+  box-shadow: 0 10px 25px var(--shadow-color-medium);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  justify-content: flex-start;
+}
+
+.isoCard:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 18px 35px var(--shadow-color-strong);
+}
+
+/* Seção Superior do Card (Imagem e Cabeçalho) */
+.cardTopSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(var(--border-color), 0.7);
+}
+
+/* Container para a Imagem Circular */
+.isoImageContainer {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #3a3a3c;
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Garante altura uniforme */
+  margin-bottom: 20px;
+  border: 3px solid var(--apple-blue);
+  box-shadow: 0 6px 15px var(--shadow-color-light);
 }
 
-.actionCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px var(--shadow-color-strong);
+.isoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
 }
 
-.actionCard h2 {
+/* Cabeçalho do Card (Nome e Versão) */
+.cardHeader {
+  border-bottom: none;
+  text-align: center;
+  width: 100%;
+}
+
+.isoCard h3 {
   color: var(--apple-blue);
-  font-size: 1.8rem;
-  margin-top: 0;
-  margin-bottom: 10px;
-  letter-spacing: -0.02em;
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
-.actionCard p {
+.versionBuild {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Corpo do Card (Descrição, Tamanho, Data, Checksum) */
+.cardBody {
+  flex-grow: 1;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.size, .releaseDate, .checksum {
   font-size: 1rem;
   color: var(--text-secondary);
-  line-height: 1.4;
-  margin-bottom: 0;
+  margin-bottom: 6px;
+  line-height: 1.5;
 }
 
-/* Estilos para a página de Currículo */
+.checksum {
+  margin-top: 15px;
+}
+
+.checksum code {
+  font-family: monospace;
+  background-color: #38383a;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #d0d0d0;
+  display: inline-block;
+  word-break: break-all;
+}
+
+/* Botão de Download */
+.downloadButton {
+  background-color: var(--apple-blue);
+  color: white;
+  padding: 16px 30px;
+  border-radius: var(--border-radius-md);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  margin-top: auto;
+  display: block;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.downloadButton:hover {
+  background-color: var(--apple-blue-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Rodapé */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: 70px;
+  width: 100%;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: var(--text-primary);
+}
+
+.footer .logo {
+  height: 1.3em;
+  margin-left: 0.8rem;
+  filter: invert(1) brightness(0.9);
+}
+
+/* --- Estilos do Navbar --- */
+.navbar {
+  width: 100%;
+  background-color: rgba(44, 44, 46, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 1rem 0;
+}
+
+.navbarContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.navbarBrand {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  transition: opacity 0.2s ease;
+}
+
+.navbarBrand:hover {
+  opacity: 0.8;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.navItem {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.navItem:hover {
+  color: var(--text-primary);
+}
+
+.navItem::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--apple-blue);
+  transition: width 0.2s ease-in-out;
+}
+
+.navItem:hover::after {
+  width: 100%;
+}
+
+/* Botão Hambúrguer (Mobile) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 20px;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- Estilos para as seções de Currículo (ResumePage) --- */
 .resumeSection {
   background-color: var(--card-background);
   border-radius: var(--border-radius-lg);
@@ -67,7 +424,7 @@
   margin-bottom: 40px;
   box-shadow: 0 8px 20px var(--shadow-color-medium);
   width: 100%;
-  max-width: 900px;
+  max-width: 900px; /* Largura máxima para as seções do currículo */
   text-align: left;
 }
 
@@ -137,7 +494,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: center; /* Centraliza as tags */
+  justify-content: center;
   margin-top: 20px;
 }
 
@@ -148,34 +505,195 @@
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 500;
-  white-space: nowrap; /* Evita quebras de linha dentro da tag */
+  white-space: nowrap;
 }
 
 .contactLink {
-  color: var(--apple-blue) !important; /* Garante a cor azul */
-  text-decoration: underline !important; /* Sublinhado para indicar link */
+  color: var(--apple-blue) !important;
+  text-decoration: underline !important;
 }
 .contactLink:hover {
   color: var(--apple-blue-dark) !important;
 }
 
-/* Responsividade para seções de currículo */
+/* --- Estilos para os Cards de Ação (Nova Página Inicial) --- */
+.callToActionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 4rem;
+  padding: 0 20px;
+}
+
+.actionCard {
+  background-color: rgba(42, 42, 44, 0.85); /* Fundo ligeiramente transparente */
+  border-radius: var(--border-radius-lg);
+  padding: 30px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5); /* Sombra mais suave e profunda */
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Garante altura uniforme */
+  color: var(--text-primary); /* Garante cor do texto principal */
+}
+
+.actionCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px var(--shadow-color-strong);
+}
+
+.actionCard h2 {
+  color: var(--apple-blue);
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  letter-spacing: -0.02em;
+}
+
+.actionCard p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+
+/* Responsividade Geral */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 4rem;
+  }
+  .description {
+    font-size: 1.5rem;
+  }
+  .main {
+    padding-top: calc(6rem + 80px); /* Ajuste para telas menores */
+    padding-bottom: 6rem;
+  }
+  .grid, .callToActionGrid {
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
+  .navbarContainer {
+    padding: 0 1.5rem;
+  }
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(44, 44, 46, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 1rem 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+  }
+  .navLinks.open {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .navItem {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+  }
+  .navItem::after {
+    content: none;
+  }
+  .navItem:active {
+    background-color: rgba(var(--apple-blue), 0.2);
+  }
+  .hamburger {
+    display: flex;
+  }
+  .hamburger.open .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Ajustes para telas médias/pequenas */
+  .title {
+    font-size: 3.5rem;
+  }
+  .description {
+    font-size: 1.4rem;
+    padding: 0 15px;
+  }
+  .heroTitle {
+    font-size: 2.8rem;
+  }
+  .heroSubtitle {
+    font-size: 1.2rem;
+  }
+  .profileImageContainer {
+    width: 100px;
+    height: 100px;
+  }
+  .isoCard {
+    padding: 30px;
+  }
+  .isoCard h3 {
+    font-size: 2rem;
+  }
+  .isoImageContainer {
+    width: 90px;
+    height: 90px;
+  }
+  .downloadButton {
+    padding: 14px 25px;
+    font-size: 1.1rem;
+  }
   .resumeSection {
-    padding: 20px;
-    margin-bottom: 30px;
+    padding: 25px;
   }
   .resumeSection h2 {
     font-size: 1.8rem;
-    margin-bottom: 20px;
   }
-  .experienceBlock h3, .educationBlock h3 {
-    font-size: 1.3rem;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
   }
-  .roleBlock h4 {
-    font-size: 1.1rem;
+  .main {
+    padding-top: calc(5rem + 80px);
+    padding-bottom: 5rem;
   }
-  .skillsGrid {
-    justify-content: flex-start; /* Alinha tags à esquerda em telas pequenas */
+  .title {
+    font-size: 2.8rem;
+  }
+  .description {
+    font-size: 1.2rem;
+  }
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+  .callToActionGrid {
+    padding: 0 10px;
   }
 }
