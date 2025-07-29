@@ -16,7 +16,7 @@ export default function HomePage() {
           <div className="profileImageContainer">
             {/* Certifique-se de que sua foto de perfil está em public/images/ */}
             <Image
-              src="https://media.licdn.com/dms/image/v2/D4D03AQHS2e0ZBJRh4w/profile-displayphoto-shrink_800_800/B4DZbfQx0dGwAc-/0/1747502441136?e=1756944000&v=beta&t=KVodmXtQLU2BICdHVyYVql3HSp2CYqFwxL-ZPUFExag"
+              src="https://media.licdn.com/dms/image/v2/D4D03AQHS2e0ZBJRh4w/profile-displayphoto-shrink_800_800/B4DZbfQx0dGwAc-/0/1747502441136?e=1756944000&v=beta&t=KVodmXtQLU2BICdHVyYVql3HSp2CYqFwxL-ZPUFExaghttps://media.licdn.com/dms/image/v2/D4D03AQHS2e0ZBJRh4w/profile-displayphoto-shrink_800_800/B4DZbfQx0dGwAc-/0/1747502441136?e=1756944000&v=beta&t=KVodmXtQLU2BICdHVyYVql3HSp2CYqFwxL-ZPUFExag"
               alt="Emerson Silva Ricardo"
               width={150}
               height={150}
