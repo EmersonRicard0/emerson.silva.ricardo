@@ -1,24 +1,33 @@
 // src/utils/dataFetcher.js
-import path from 'path'; // Importa o módulo 'path' do Node.js
-import fs from 'fs/promises'; // Importa o módulo 'fs/promises' do Node.js para ler arquivos
+import path from 'path';
+import fs from 'fs/promises';
 
 export async function getIsosData() {
   try {
-    // Constrói o caminho absoluto para o arquivo isos.json
-    // process.cwd() é o diretório raiz do seu projeto (seu-site-de-isos)
     const jsonDirectory = path.join(process.cwd(), 'public');
-    const filePath = path.join(jsonDirectory, 'isos.json');
+    const filePath = path.join(jsonDirectory, 'isos.json'); // Ou downloads.json no futuro
 
-    // Lê o conteúdo do arquivo JSON
     const fileContents = await fs.readFile(filePath, 'utf8');
-
-    // Faz o parse do conteúdo para JSON
     const data = JSON.parse(fileContents);
     return data;
 
   } catch (error) {
-    // Adiciona mais detalhes ao log de erro para depuração
     console.error("Falha ao buscar dados das ISOs (verifique public/isos.json e caminho):", error);
-    return []; // Retorna um array vazio em caso de erro
+    return [];
+  }
+}
+
+export async function getResumeData() {
+  try {
+    const jsonDirectory = path.join(process.cwd(), 'public');
+    const filePath = path.join(jsonDirectory, 'resumeData.json');
+
+    const fileContents = await fs.readFile(filePath, 'utf8');
+    const data = JSON.parse(fileContents);
+    return data;
+
+  } catch (error) {
+    console.error("Falha ao buscar dados do currículo (verifique public/resumeData.json e caminho):", error);
+    return null; // Retorna null em caso de erro para a página de currículo
   }
 }
