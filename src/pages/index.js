@@ -16,7 +16,7 @@ export default function HomePage() {
           {/* Imagem de Capa (Banner) */}
           <div className="hero-banner">
             <Image
-              src="/images/cover_emerson.jpg" // <-- Coloque o nome da sua imagem de capa aqui
+              src="/images/capa.jpg" // <-- Coloque o nome da sua imagem de capa aqui
               alt="Capa do Portfólio de Emerson Silva Ricardo"
               layout="fill" // Para cobrir o container
               objectFit="cover" // Garante que a imagem cubra o espaço sem distorcer
