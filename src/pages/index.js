@@ -1,41 +1,47 @@
-// src/pages/index.js
+// src/pages/index.js (Nova Página Inicial do Portfólio)
 import Head from 'next/head';
-import IsoCard from '../components/IsoCard.js';   // Corrigido para .js
-import { getIsosData } from '../utils/dataFetcher.js'; // Corrigido para .js
-// REMOVIDA: importação de '../styles/globals.css' daqui, pois já está em _app.js
+import React from 'react';
+// Se quiser, pode adicionar sua foto de perfil aqui e mais texto de introdução
+// import Image from 'next/image'; // Para otimizar imagens, se for usar
 
-export async function getStaticProps() {
-  const isos = await getIsosData();
-  return {
-    props: {
-      isos,
-    },
-    revalidate: 60 // Revalida a cada 60 segundos para pegar atualizações no JSON
-  };
-}
-
-export default function HomePage({ isos }) {
+export default function HomePage() {
   return (
     <div className="container">
       <Head>
-        <title>Repositório de ISOs macOS</title>
-        <meta name="description" content="Baixe ISOs de sistemas macOS para suas necessidades de instalação e testes." />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Emerson Silva Ricardo - Portfólio</title>
+        <meta name="description" content="Portfólio de Emerson Silva Ricardo: Network and Infrastructure Analyst." />
       </Head>
 
       <main className="main">
-        <h1 className="title">
-          Repositório de ISOs macOS
-        </h1>
+        {/* Se quiser uma foto de perfil */}
+        {/* <div className="profileImageContainer">
+            <Image
+              src="/images/your_profile_photo.jpg" // Coloque sua foto em public/images/
+              alt="Emerson Silva Ricardo"
+              width={150}
+              height={150}
+              className="profileImage"
+            />
+        </div> */}
 
+        <h1 className="title">Olá, eu sou o Emerson Silva Ricardo.</h1>
         <p className="description">
-          Encontre e baixe diversas versões do macOS.
+          Analista de Redes e Infraestrutura, apaixonado por Linux, Datacom e soluções de monitoramento. Explore meus projetos e recursos de boas práticas aqui.
         </p>
 
-        <div className="grid">
-          {isos.map((iso) => (
-            <IsoCard key={iso.id} iso={iso} />
-          ))}
+        <div className="callToActionGrid">
+          <a href="/projects" className="actionCard">
+            <h2>Meus Projetos &rarr;</h2>
+            <p>Veja os trabalhos que desenvolvi e as soluções que implementei.</p>
+          </a>
+          <a href="/downloads" className="actionCard">
+            <h2>Recursos & Downloads &rarr;</h2>
+            <p>Acesse materiais sobre boas práticas e conhecimento em redes.</p>
+          </a>
+          <a href="/resume" className="actionCard">
+            <h2>Meu Currículo &rarr;</h2>
+            <p>Conheça minha experiência profissional e formação acadêmica.</p>
+          </a>
         </div>
       </main>
     </div>
