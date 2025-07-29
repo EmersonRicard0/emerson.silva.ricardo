@@ -1,6 +1,5 @@
 // src/components/IsoCard.js
 import React from 'react';
-// REMOVIDA: importação de '../styles/globals.css' daqui, pois já está em _app.js
 
 function IsoCard({ iso }) {
   return (
@@ -8,12 +7,12 @@ function IsoCard({ iso }) {
       href={iso.link_download}
       target="_blank"
       rel="noopener noreferrer"
-      className="isoCard" // Usa a classe direta do CSS global
+      className="isoCard"
       title={`Baixar ${iso.nome} ${iso.versao}`}
     >
-      <div className="cardTopSection"> {/* Nova div para agrupar imagem e cabeçalho */}
-        {iso.image && ( /* Renderiza a imagem apenas se o campo 'image' existir */
-          <div className="isoImageContainer"> {/* Container para a imagem circular */}
+      <div className="cardTopSection">
+        {iso.image && (
+          <div className="isoImageContainer">
             <img src={iso.image} alt={`Logo ${iso.nome}`} className="isoImage" />
           </div>
         )}
@@ -25,7 +24,7 @@ function IsoCard({ iso }) {
       <div className="cardBody">
         <p className="description">{iso.descricao_curta}</p>
         <p className="size">Tamanho: {iso.tamanho_gb} GB</p>
-        <p className="releaseDate">Lançamento: {iso.data_lancamento}</p> {/* Adicionei a data de lançamento aqui para visibilidade */}
+        <p className="releaseDate">Lançamento: {iso.data_lancamento}</p>
         {iso.checksum_sha256 && (
           <p className="checksum">SHA256: <code>{iso.checksum_sha256.substring(0, 10)}...</code></p>
         )}
