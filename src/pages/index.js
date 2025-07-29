@@ -16,7 +16,7 @@ export default function HomePage() {
           <div className="profileImageContainer">
             {/* Certifique-se de que sua foto de perfil está em public/images/ */}
             <Image
-              src="https://media.licdn.com/dms/image/v2/D4D03AQHS2e0ZBJRh4w/profile-displayphoto-shrink_800_800/B4DZbfQx0dGwAc-/0/1747502441136?e=1756944000&v=beta&t=KVodmXtQLU2BICdHVyYVql3HSp2CYqFwxL-ZPUFExaghttps://media.licdn.com/dms/image/v2/D4D03AQHS2e0ZBJRh4w/profile-displayphoto-shrink_800_800/B4DZbfQx0dGwAc-/0/1747502441136?e=1756944000&v=beta&t=KVodmXtQLU2BICdHVyYVql3HSp2CYqFwxL-ZPUFExaghttps://media.canva.com/v2/image-resize/format:JPG/height:550/quality:92/uri:ifs%3A%2F%2FM%2Ff48bc989-68a2-4c3a-bdfb-1cc79c23d7b3/watermark:F/width:550?csig=AAAAAAAAAAAAAAAAAAAAAN0a6xdlmbMFoFRUqZoUyCasnX7XIl8X6TT9VtMiMPO7&exp=1753823046&osig=AAAAAAAAAAAAAAAAAAAAAObHeWbuMPV78b_fKpMssGoJ65LsnR4yiEGlNb-xo3vk&signer=media-rpc&x-canva-quality=thumbnail_large"
+              src="https://media.canva.com/v2/image-resize/format:JPG/height:550/quality:92/uri:ifs%3A%2F%2FM%2Ff48bc989-68a2-4c3a-bdfb-1cc79c23d7b3/watermark:F/width:550?csig=AAAAAAAAAAAAAAAAAAAAAN0a6xdlmbMFoFRUqZoUyCasnX7XIl8X6TT9VtMiMPO7&exp=1753823046&osig=AAAAAAAAAAAAAAAAAAAAAObHeWbuMPV78b_fKpMssGoJ65LsnR4yiEGlNb-xo3vk&signer=media-rpc&x-canva-quality=thumbnail_large"
               alt="Emerson Silva Ricardo"
               width={150}
               height={150}
