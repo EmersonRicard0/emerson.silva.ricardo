@@ -9,7 +9,6 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbarContainer">
         <Link href="/" className="navbarBrand">
-          {/* Você pode colocar seu nome aqui ou um logo textual */}
           Emerson Ricardo
         </Link>
 
@@ -29,9 +28,8 @@ function Navbar() {
           <Link href="/resume" className="navItem" onClick={() => setIsOpen(false)}>
             Currículo
           </Link>
-          <Link href="/downloads" className="navItem" onClick={() => setIsOpen(false)}>
-            Recursos
-          </Link>
+          {/* REMOVIDA: A linha abaixo não existe mais */}
+          {/* <Link href="/downloads" className="navItem" onClick={() => setIsOpen(false)}>Recursos</Link> */}
           <Link href="/contact" className="navItem" onClick={() => setIsOpen(false)}>
             Contato
           </Link>
