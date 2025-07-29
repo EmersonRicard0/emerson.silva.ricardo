@@ -16,7 +16,7 @@ export default function HomePage() {
           {/* Imagem de Capa (Banner) */}
           <div className="hero-banner">
             <Image
-              src="https://media.licdn.com/dms/image/v2/D4D16AQEI6-GLx7ttDw/profile-displaybackgroundimage-shrink_350_1400/B4DZgjWRg7GsAY-/0/1752939698840?e=1756944000&v=beta&t=9zE6nIvgLwcaBYq4m9XH0tujvRnHZY0BZ3120YcSfHI" // <-- Coloque o nome da sua imagem de capa aqui
+              src="/imagens/capa.jpg" // <-- Coloque o nome da sua imagem de capa aqui
               alt="Capa do Portfólio de Emerson Silva Ricardo"
               layout="fill" // Para cobrir o container
               objectFit="cover" // Garante que a imagem cubra o espaço sem distorcer
@@ -29,7 +29,7 @@ export default function HomePage() {
           <div className="profile-details-card"> {/* Card com foto e detalhes */}
             <div className="profileImageContainer">
               <Image
-                src="https://media.licdn.com/dms/image/v2/D4D03AQHS2e0ZBJRh4w/profile-displayphoto-shrink_800_800/B4DZbfQx0dGwAc-/0/1747502441136?e=1756944000&v=beta&t=KVodmXtQLU2BICdHVyYVql3HSp2CYqFwxL-ZPUFExag" // <-- Sua foto de perfil (perfil.jpg ou perfil.png)
+                src="/imagens/perfil.jpg" // <-- Sua foto de perfil (perfil.jpg ou perfil.png)
                 alt="Emerson Silva Ricardo"
                 width={150}
                 height={150}
