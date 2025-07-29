@@ -12,40 +12,62 @@ export default function HomePage() {
       </Head>
 
       <main className="main">
-        <div className="hero">
-          <div className="profileImageContainer">
-            {/* Certifique-se de que sua foto de perfil está em public/images/ */}
+        <div className="hero-section"> {/* Nova seção para a capa e informações */}
+          {/* Imagem de Capa (Banner) */}
+          <div className="hero-banner">
             <Image
-              src="imagens/perfil.jpg"
-               width={150}
-               height={150}
-               className="profileImage"
+              src="/images/cover_emerson.jpg" // <-- Coloque o nome da sua imagem de capa aqui
+              alt="Capa do Portfólio de Emerson Silva Ricardo"
+              layout="fill" // Para cobrir o container
+              objectFit="cover" // Garante que a imagem cubra o espaço sem distorcer
+              quality={90} // Qualidade da imagem
+              priority // Carrega esta imagem mais rapidamente, pois é a principal
             />
+            <div className="hero-overlay"></div> {/* Overlay para escurecer a imagem e melhorar legibilidade do texto */}
           </div>
-          <h1 className="heroTitle">Olá, eu sou o Emerson Silva Ricardo.</h1>
-          <p className="heroSubtitle">
-            Analista de Redes e Infraestrutura, apaixonado por Linux, Datacom e soluções de monitoramento. Explore meus projetos e recursos de boas práticas aqui.
-          </p>
+
+          <div className="profile-details-card"> {/* Card com foto e detalhes */}
+            <div className="profileImageContainer">
+              <Image
+                src="/images/perfil.jpg" // <-- Sua foto de perfil (perfil.jpg ou perfil.png)
+                alt="Emerson Silva Ricardo"
+                width={150}
+                height={150}
+                className="profileImage"
+              />
+            </div>
+            <h1 className="profile-name">Emerson Silva Ricardo</h1>
+            <p className="profile-title">Network and Infrastructure Analyst</p>
+            <p className="profile-skills">Linux | Datacom | Mikrotik | Zabbix</p> {/* Suas principais habilidades */}
+            <div className="profile-contact-info">
+              <p><span>📞</span> 085992933087</p>
+              <p><span>✉️</span> silvaemerson797@gmail.com</p>
+            </div>
+            <a href="https://www.linkedin.com/in/emerson-silva-ricardo-543308119" target="_blank" rel="noopener noreferrer" className="linkedin-button">
+              Ver Perfil no LinkedIn
+            </a>
+          </div>
         </div>
 
-        <div className="callToActionGrid">
-          <a href="/projects" className="actionCard">
-            <h2>Meus Projetos &rarr;</h2>
-            <p>Veja os trabalhos que desenvolvi e as soluções que implementei.</p>
-          </a>
-          <a href="/downloads" className="actionCard">
-            <h2>Recursos & Downloads &rarr;</h2>
-            <p>Acesse materiais sobre boas práticas e conhecimento em redes.</p>
-          </a>
-          <a href="/resume" className="actionCard">
-            <h2>Meu Currículo &rarr;</h2>
-            <p>Conheça minha experiência profissional e formação acadêmica.</p>
-          </a>
-          <a href="/contact" className="actionCard">
-            <h2>Fale Comigo &rarr;</h2>
-            <p>Entre em contato para oportunidades de trabalho ou parcerias.</p>
-          </a>
-        </div>
+        {/* Seção dos Cards de Ação */}
+        <section className="section-container">
+          <h2 className="section-title">Explore Meu Portfólio</h2>
+          <div className="callToActionGrid">
+            <a href="/projects" className="actionCard">
+              <h2>Meus Projetos &rarr;</h2>
+              <p>Veja os trabalhos que desenvolvi e as soluções que implementei.</p>
+            </a>
+            <a href="/resume" className="actionCard">
+              <h2>Meu Currículo &rarr;</h2>
+              <p>Conheça minha experiência profissional e formação acadêmica.</p>
+            </a>
+            <a href="/contact" className="actionCard">
+              <h2>Fale Comigo &rarr;</h2>
+              <p>Entre em contato para oportunidades de trabalho ou parcerias.</p>
+            </a>
+          </div>
+        </section>
+
       </main>
     </div>
   );
