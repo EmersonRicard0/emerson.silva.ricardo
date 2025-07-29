@@ -16,7 +16,7 @@ export default function HomePage() {
           <div className="profileImageContainer">
             {/* Certifique-se de que sua foto de perfil está em public/images/ */}
             <Image
-              src="/images/emerson_perfil.jpg"
+              src="/images/perfil.png"
               alt="Emerson Silva Ricardo"
               width={150}
               height={150}
