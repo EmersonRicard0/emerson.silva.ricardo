@@ -1,7 +1,7 @@
-// src/pages/index.js (Nova Página Inicial do Portfólio - Melhorada)
+// src/pages/index.js (Nova Página Inicial do Portfólio - Completa)
 import Head from 'next/head';
 import React from 'react';
-import Image from 'next/image';
+import Image from 'next/image'; // Certifique-se de que Image está importado
 
 export default function HomePage() {
   return (
@@ -17,10 +17,10 @@ export default function HomePage() {
           {/* Imagem de Capa (Banner) */}
           <div className="hero-banner">
             <Image
-              src="/imagens/capa.jpg" // Confirme o caminho da sua imagem de capa (ex: public/imagens/capa.jpg)
+              src="/imagens/capa.jpg" // <-- CONFIRME: Sua imagem de capa deve estar em public/imagens/capa.jpg
               alt="Capa do Portfólio de Emerson Silva Ricardo"
               layout="fill"
-              objectFit="cover"
+              objectFit="cover" // Garante que a imagem cubra o espaço (pode haver corte)
               quality={90}
               priority
             />
@@ -31,17 +31,16 @@ export default function HomePage() {
           <div className="profile-details-card">
             <div className="profileImageContainer">
               <Image
-                src="/imagens/perfil.jpg" // Confirme o caminho da sua foto de perfil (ex: public/imagens/perfil.jpg)
+                src="/imagens/perfil.jpg" // <-- CONFIRME: Sua foto de perfil deve estar em public/imagens/perfil.jpg
                 alt="Emerson Silva Ricardo"
-                width={150}
-                height={150}
+                width={160} // Ajustado para o novo tamanho via CSS
+                height={160} // Ajustado para o novo tamanho via CSS
                 className="profileImage"
               />
             </div>
             {/* O h1 principal da página agora está aqui, dentro do card de destaque */}
             <h1 className="profile-name">Emerson Silva Ricardo</h1>
             <p className="profile-title">Network and Infrastructure Analyst</p>
-            {/* Adicionei uma breve descrição para contextualizar suas habilidades */}
             <p className="profile-skills">
               Especialista em **Linux**, **Datacom** e **Mikrotik**, com foco em **análise e otimização de infraestrutura de redes**.
             </p>
@@ -63,17 +62,14 @@ export default function HomePage() {
               <h2>Meus Projetos &rarr;</h2>
               <p>Veja os trabalhos que desenvolvi e as soluções que implementei em redes e infraestrutura.</p>
             </a>
-            {/* Card para a página de currículo */}
             <a href="/resume" className="actionCard">
               <h2>Meu Currículo &rarr;</h2>
               <p>Conheça minha experiência profissional, formação acadêmica e habilidades técnicas.</p>
             </a>
-            {/* Card para a página de downloads/recursos - Adicionado de volta! */}
             <a href="/downloads" className="actionCard">
               <h2>Recursos & Downloads &rarr;</h2>
               <p>Acesse materiais, guias e boas práticas em redes e TI para download.</p>
             </a>
-            {/* Card para a página de contato */}
             <a href="/contact" className="actionCard">
               <h2>Fale Comigo &rarr;</h2>
               <p>Entre em contato para oportunidades de trabalho, parcerias ou dúvidas.</p>

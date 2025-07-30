@@ -1,20 +1,21 @@
+// public/resumeData.json (Completo com seus dados)
 {
   "personalInfo": {
     "name": "Emerson Silva Ricardo",
-    "title": "Network and Infrastructure Analyst | Linux | Datacom | Mikrotik | Zabbix",
+    "title": "Network and Infrastructure analyst | Linux | Datacom | Mikrotik | ",
     "location": "Fortaleza, Ceará, Brasil",
     "contact": {
-      "city": "Pindoretama",
+      "city": "",
       "mobile": "085992933087",
       "email": "silvaemerson797@gmail.com",
       "linkedin": "https://www.linkedin.com/in/emerson-silva-ricardo-543308119"
     }
   },
-  "summary": "Profissional de redes com experiência em suporte técnico, configuração de equipamentos e solução de problemas. Habilidade em coordenação de projetos, gestão de equipe e comunicação técnica. Foco em eficiência, adaptação e entrega de resultados.",
+  "summary": ". Habilidade em coordenação de projetos, gestão de equipe e comunicação técnica. .",
   "skills": [
-    "Análise de sistemas",
-    "Redes LAN-WAN",
-    "Redes sem fio",
+    "",
+    "",
+    "",
     "Inglês para Tecnologia da Informação",
     "Switches DmOS - Layer 2",
     "Switches DmOS - Layer 3",
@@ -23,7 +24,7 @@
     "Linux",
     "Datacom",
     "Mikrotik",
-    "Zabbix"
+    ""
   ],
   "experience": [
     {
@@ -33,32 +34,32 @@
         {
           "title": "Gerente de suporte de operações de tecnologia da informação / Noc rede",
           "period": "fevereiro de 2023 - Presente (2 anos 6 meses)",
-          "location": "Pindoretama, Ceará, Brasil",
+          "location": "",
           "responsibilities": [
-            "Supervisão e coordenação das operações diárias do NOC para garantir a disponibilidade contínua e o desempenho otimizado da rede.",
-            "Gestão de equipe, incluindo escalonamento de problemas, treinamento e desenvolvimento de membros da equipe.",
-            "Implementação e manutenção de processos de monitoramento proativo para identificar e resolver problemas de rede antes que afetassem os usuários.",
-            "Colaboração com equipes de engenharia e segurança para implementar políticas e procedimentos de segurança de rede.",
-            "Planejamento e execução de atualizações de infraestrutura de rede e projetos de expansão para atender às necessidades empresariais em evolução.",
-            "Documentação detalhada de procedimentos operacionais e relatórios de desempenho para garantir a conformidade com as normas e facilitar auditorias."
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "."
           ]
         },
         {
           "title": "Analista de rede",
           "period": "março de 2021 - fevereiro de 2023 (2 anos)",
-          "location": "Pindoretama, Ceará, Brasil",
+          "location": "",
           "responsibilities": [
-            "Configuração, instalação e manutenção de equipamentos de rede, assegurando alto desempenho e disponibilidade.",
-            "Monitoramento proativo da rede para identificar e resolver problemas antes que impactassem os usuários.",
-            "Implementação de políticas de segurança de rede para proteger dados sensíveis e recursos da empresa.",
-            "Colaboração com equipes internas e fornecedores para implementar atualizações e novas tecnologias conforme necessário.",
-            "Documentação de procedimentos e configurações de rede para garantir a consistência e facilitar futuras atualizações."
+            ".",
+            ".",
+            ".",
+            ".",
+            "."
           ]
         },
         {
           "title": "Técnico de redes",
           "period": "abril de 2018 - abril de 2020 (2 anos 1 mês)",
-          "location": "Pindoretama, Ceará, Brasil",
+          "location": "",
           "responsibilities": []
         }
       ]

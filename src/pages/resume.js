@@ -1,7 +1,7 @@
-// src/pages/resume.js
+// src/pages/resume.js (Completo)
 import Head from 'next/head';
 import React from 'react';
-import { getResumeData } from '../utils/dataFetcher';
+import { getResumeData } from '../utils/dataFetcher'; // Vamos atualizar o dataFetcher para isso
 
 export async function getStaticProps() {
   const resume = await getResumeData();
@@ -9,7 +9,7 @@ export async function getStaticProps() {
     props: {
       resume,
     },
-    revalidate: 60
+    revalidate: 60 // Revalida a cada 60 segundos
   };
 }
 
@@ -33,10 +33,7 @@ export default function ResumePage({ resume }) {
       </Head>
 
       <main className="main">
-        <h1 className="title">{resume.personalInfo.name}</h1>
-        <p className="description">{resume.personalInfo.title}</p>
-
-        <section className="resumeSection">
+        <section className="resumeSection"> {/* Ajustado para usar section-container para padronização */}
           <h2>Resumo</h2>
           <p>{resume.summary}</p>
         </section>

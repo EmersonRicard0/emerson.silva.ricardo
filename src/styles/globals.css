@@ -75,7 +75,7 @@ body {
 .hero-section {
   position: relative;
   width: 100%;
-  height: 320px; /* Altura ligeiramente maior para o banner */
+  height: 360px; /* AUMENTADO: Altura maior para o banner */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,7 +112,7 @@ body {
   position: relative;
   background-color: var(--background-secondary);
   border-radius: var(--border-radius-lg);
-  padding: 35px 45px; /* Padding um pouco maior */
+  padding: 40px 45px; /* AUMENTADO: Padding superior para dar mais espaço */
   box-shadow: 0 12px 30px var(--shadow-light); /* Sombra mais suave */
   text-align: center;
   z-index: 3;
@@ -125,15 +125,16 @@ body {
   align-items: center;
 }
 
+/* AJUSTES PARA A IMAGEM DE PERFIL: MAIOR E POSICIONAMENTO */
 .profileImageContainer {
-  width: 130px; /* Foto um pouco maior */
-  height: 130px;
+  width: 160px; /* AUMENTADO: Largura da sua foto de perfil */
+  height: 160px; /* AUMENTADO: Altura da sua foto de perfil */
   border-radius: 50%;
   overflow: hidden;
-  margin-top: -85px; /* Ajusta conforme o novo tamanho da foto */
+  margin-top: -100px; /* AJUSTADO: Puxa a foto para cima, sobre o banner, com base no novo tamanho */
   margin-bottom: 25px; /* Mais espaço */
-  border: 4px solid var(--background-secondary);
-  box-shadow: 0 6px 18px var(--shadow-light); /* Sombra da foto mais suave */
+  border: 5px solid var(--background-secondary); /* AUMENTADO: Borda branca ao redor da foto */
+  box-shadow: 0 8px 20px var(--shadow-light); /* Sombra da foto um pouco mais visível */
   z-index: 4;
 }
 
@@ -358,6 +359,16 @@ body {
   width: 100%;
 }
 
+/* Estilo para o item ativo no Navbar */
+.navItem.active {
+  color: var(--text-primary); /* Garante que o item ativo seja a cor principal */
+  font-weight: 600; /* Pode deixar mais negrito */
+}
+
+.navItem.active::after {
+  width: 100%; /* Garante que a linha esteja ativa */
+}
+
 /* Botão Hambúrguer (Mobile) */
 .hamburger {
   display: none;
@@ -490,7 +501,7 @@ body {
     padding-bottom: 5rem;
   }
   .hero-section {
-    height: 280px;
+    height: 300px; /* AJUSTADO: Altura para telas médias */
     margin-bottom: 70px;
   }
   .profile-details-card {
@@ -498,9 +509,9 @@ body {
     max-width: 90%;
   }
   .profileImageContainer {
-    width: 110px;
-    height: 110px;
-    margin-top: -70px;
+    width: 130px; /* AJUSTADO: Tamanho para telas médias */
+    height: 130px; /* AJUSTADO: Tamanho para telas médias */
+    margin-top: -80px; /* AJUSTADO: Posição para telas médias */
   }
   .profile-name {
     font-size: 2.1rem;
@@ -554,7 +565,7 @@ body {
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  /* Ajustes para telas menores */
+  /* Ajustes para telas muito pequenas */
   .title { /* Assume que você ainda tem um .title na home, se não, pode remover */
     font-size: 2.8rem;
   }
@@ -563,7 +574,7 @@ body {
     padding: 0 20px;
   }
   .hero-section {
-    height: 180px;
+    height: 220px; /* AJUSTADO: Altura mínima em mobile */
     margin-bottom: 50px;
   }
   .profile-details-card {
@@ -571,9 +582,9 @@ body {
     transform: translateY(60%); /* Ajusta para mobile para não cortar */
   }
   .profileImageContainer {
-    width: 90px;
-    height: 90px;
-    margin-top: -55px;
+    width: 100px; /* AJUSTADO: Tamanho para mobile */
+    height: 100px; /* AJUSTADO: Tamanho para mobile */
+    margin-top: -65px; /* AJUSTADO: Posição para mobile */
     margin-bottom: 15px;
   }
   .profile-name {
@@ -638,7 +649,7 @@ body {
     padding-bottom: 4rem;
   }
   .hero-section {
-    height: 150px;
+    height: 180px; /* AJUSTADO: Altura para telas muito pequenas */
     margin-bottom: 40px;
   }
   .profile-details-card {
@@ -646,9 +657,9 @@ body {
     transform: translateY(70%); /* Mais para cima em telas muito pequenas */
   }
   .profileImageContainer {
-    width: 70px;
-    height: 70px;
-    margin-top: -40px;
+    width: 80px; /* AJUSTADO: Tamanho para telas muito pequenas */
+    height: 80px; /* AJUSTADO: Tamanho para telas muito pequenas */
+    margin-top: -50px; /* AJUSTADO: Posição para telas muito pequenas */
     margin-bottom: 10px;
   }
   .profile-name {

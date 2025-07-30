@@ -1,42 +1,59 @@
-// src/components/Navbar.js
-import React, { useState } from 'react';
+// src/components/Navbar.js (Completo)
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router'; // Para destacar o link ativo
 
-function Navbar() {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter(); // Hook para acessar a rota atual
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Fecha o menu ao mudar de rota (para mobile)
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setIsOpen(false);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+
+
+  const navLinks = [
+    { name: 'Projetos', path: '/projects' },
+    { name: 'Currículo', path: '/resume' },
+    { name: 'Downloads', path: '/downloads' },
+    { name: 'Contato', path: '/contact' },
+  ];
 
   return (
     <nav className="navbar">
       <div className="navbarContainer">
-        <Link href="/" className="navbarBrand">
-          Emerson Ricardo
+        <Link href="/" legacyBehavior>
+          <a className="navbarBrand">Emerson Ricardo</a>
         </Link>
 
-        <button className="hamburger" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle navigation">
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
+        <button className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
         </button>
 
         <div className={`navLinks ${isOpen ? 'open' : ''}`}>
-          <Link href="/" className="navItem" onClick={() => setIsOpen(false)}>
-            Início
-          </Link>
-          <Link href="/projects" className="navItem" onClick={() => setIsOpen(false)}>
-            Projetos
-          </Link>
-          <Link href="/resume" className="navItem" onClick={() => setIsOpen(false)}>
-            Currículo
-          </Link>
-          {/* REMOVIDA: A linha abaixo não existe mais */}
-          {/* <Link href="/downloads" className="navItem" onClick={() => setIsOpen(false)}>Recursos</Link> */}
-          <Link href="/contact" className="navItem" onClick={() => setIsOpen(false)}>
-            Contato
-          </Link>
+          {navLinks.map((link) => (
+            <Link href={link.path} key={link.name} legacyBehavior>
+              {/* Adiciona classe 'active' se a rota atual for igual ao path do link */}
+              <a className={`navItem ${router.pathname === link.path ? 'active' : ''}`}>
+                {link.name}
+              </a>
+            </Link>
+          ))}
         </div>
       </div>
     </nav>
   );
 }
-
-export default Navbar;

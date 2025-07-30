@@ -1,4 +1,4 @@
-// src/pages/contact.js
+// src/pages/contact.js (Completo - Placeholder)
 import Head from 'next/head';
 import React from 'react';
 
@@ -6,28 +6,23 @@ export default function ContactPage() {
   return (
     <div className="container">
       <Head>
-        <title>Contato - Portfólio</title>
-        <meta name="description" content="Entre em contato com Emerson Silva Ricardo." />
+        <title>Contato - Emerson Silva Ricardo</title>
+        <meta name="description" content="Entre em contato com Emerson Silva Ricardo para oportunidades profissionais." />
       </Head>
 
       <main className="main">
-        <h1 className="title">Fale Comigo</h1>
-        <p className="description" style={{ maxWidth: '800px' }}>
-          Estou sempre aberto a novas oportunidades de trabalho, colaborações e discussões sobre tecnologia em redes.
-        </p>
-        <div className="resumeSection" style={{ textAlign: 'center', maxWidth: '600px' }}>
-          <h2>Entre em Contato</h2>
-          <p>
-            Email: <a href="mailto:silvaemerson797@gmail.com" className="contactLink">silvaemerson797@gmail.com</a>
+        <section className="section-container">
+          <h1 className="section-title">Fale Comigo</h1>
+          <p className="description">
+            Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato!
           </p>
-          <p>
-            Celular: 085992933087
-          </p>
-          <p>
-            LinkedIn: <a href="https://www.linkedin.com/in/emerson-silva-ricardo-543308119" target="_blank" rel="noopener noreferrer" className="contactLink">Meu Perfil no LinkedIn</a>
-          </p>
+          <div className="profile-contact-info" style={{ marginTop: '40px', fontSize: '1.2rem', flexDirection: 'column', gap: '20px' }}>
+            <p><span>✉️</span> silvaemerson797@gmail.com</p>
+            <p><span>📞</span> 085992933087</p>
+            <p><span>🔗</span> <a href="https://www.linkedin.com/in/emerson-silva-ricardo-543308119" target="_blank" rel="noopener noreferrer" className="contactLink">Meu Perfil no LinkedIn</a></p>
+          </div>
           {/* Você pode adicionar um formulário de contato aqui futuramente */}
-        </div>
+        </section>
       </main>
     </div>
   );
