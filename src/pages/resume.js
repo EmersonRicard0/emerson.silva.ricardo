@@ -1,7 +1,7 @@
 // src/pages/resume.js (Completo)
 import Head from 'next/head';
 import React from 'react';
-import { getResumeData } from '../utils/dataFetcher'; // Vamos atualizar o dataFetcher para isso
+import { getResumeData } from '../utils/dataFetcher';
 
 export async function getStaticProps() {
   const resume = await getResumeData();
@@ -19,7 +19,7 @@ export default function ResumePage({ resume }) {
       <div className="container">
         <main className="main">
           <h1 className="title">Currículo Não Encontrado</h1>
-          <p className="description">Houve um problema ao carregar os dados do currículo.</p>
+          <p className="description">Houve um problema ao carregar os dados do currículo. Verifique o arquivo `public/resumeData.json` e o console para erros.</p>
         </main>
       </div>
     );
@@ -33,7 +33,7 @@ export default function ResumePage({ resume }) {
       </Head>
 
       <main className="main">
-        <section className="resumeSection"> {/* Ajustado para usar section-container para padronização */}
+        <section className="resumeSection">
           <h2>Resumo</h2>
           <p>{resume.summary}</p>
         </section>

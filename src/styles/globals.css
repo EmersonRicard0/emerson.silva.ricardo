@@ -82,6 +82,10 @@ body {
   justify-content: flex-end;
   margin-bottom: 80px;
   overflow: hidden;
+  /* IMPORTANTE: Aqui você pode adicionar um background-image genérico se não tiver uma imagem de capa específica */
+  /* background-image: url('/imagens/abstract-banner-placeholder.jpg'); */
+  /* background-size: cover; */
+  /* background-position: center; */
 }
 
 .hero-banner {
@@ -91,10 +95,6 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1;
-  /* Dica: Use uma imagem de fundo abstrata, suave e de alta qualidade aqui. */
-  /* background-image: url('/images/abstract-banner.jpg'); */
-  /* background-size: cover; */
-  /* background-position: center; */
 }
 
 .hero-overlay {
@@ -294,9 +294,9 @@ body {
 /* --- Estilos do Navbar --- */
 .navbar {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.98); /* Mais opaco para leitura */
-  backdrop-filter: blur(15px); /* Blur um pouco mais forte */
-  -webkit-backdrop-filter: blur(15px);
+  background-color: var(--background-secondary); /* COR FIXA: Fundo branco puro para melhor contraste */
+  /* backdrop-filter: blur(0px); REMOVIDO: Se você quiser remover o blur completamente */
+  /* -webkit-backdrop-filter: blur(0px); REMOVIDO: */
   position: fixed;
   top: 0;
   left: 0;
@@ -315,7 +315,7 @@ body {
 }
 
 .navbarBrand {
-  font-size: 1.7rem; /* Brand um pouco maior */
+  font-size: 1.8rem; /* AUMENTADO: Brand um pouco maior para destaque */
   font-weight: 600;
   color: var(--text-primary);
   letter-spacing: -0.03em;

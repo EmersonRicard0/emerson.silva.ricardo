@@ -28,6 +28,7 @@ export async function getResumeData() {
 
   } catch (error) {
     console.error("Falha ao buscar dados do currículo (verifique public/resumeData.json e caminho):", error);
-    return null; // Retorna null em caso de erro para a página de currículo
+    // Retorna null para que a página de currículo possa exibir uma mensagem de erro amigável
+    return null;
   }
 }
