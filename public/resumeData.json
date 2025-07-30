@@ -1,66 +1,70 @@
-
 {
   "personalInfo": {
     "name": "Emerson Silva Ricardo",
-    "title": "Network and Infrastructure analyst | Linux | Datacom | Mikrotik | ",
+    "title": "Network and Infrastructure Analyst | Linux | Datacom | Mikrotik",
     "location": "Fortaleza, Ceará, Brasil",
     "contact": {
-      "city": "",
       "mobile": "085992933087",
       "email": "silvaemerson797@gmail.com",
       "linkedin": "https://www.linkedin.com/in/emerson-silva-ricardo-543308119"
     }
   },
-  "summary": ". Habilidade em coordenação de projetos, gestão de equipe e comunicação técnica. .",
+  "summary": "Profissional de redes e infraestrutura com mais de 4 anos de experiência, focado em Linux, Datacom e Mikrotik. Habilidade comprovada em coordenação de projetos, gestão de equipe e comunicação técnica eficaz para otimizar ambientes de TI.",
   "skills": [
-    "",
-    "",
-    "",
-    "Inglês para Tecnologia da Informação",
+    "Linux",
+    "Datacom",
+    "Mikrotik",
     "Switches DmOS - Layer 2",
     "Switches DmOS - Layer 3",
     "Redes GPON",
     "Jornada Mikrotik",
-    "Linux",
-    "Datacom",
-    "Mikrotik",
-    ""
+    "Inglês para Tecnologia da Informação",
+    "Gerenciamento de Redes",
+    "Configuração de Roteadores",
+    "Suporte Técnico",
+    "Solução de Problemas",
+    "Infraestrutura de TI",
+    "NOC (Network Operations Center)"
   ],
   "experience": [
     {
       "company": "JR.NET",
-      "duration": "4 anos 5 meses",
+      "duration": "Fevereiro de 2023 - Presente (2 anos 6 meses)",
       "roles": [
         {
-          "title": "Gerente de suporte de operações de tecnologia da informação / Noc rede",
-          "period": "fevereiro de 2023 - Presente (2 anos 6 meses)",
-          "location": "",
+          "title": "Gerente de Suporte de Operações de Tecnologia da Informação / NOC Rede",
+          "period": "Fevereiro de 2023 - Presente",
+          "location": "Fortaleza, Ceará",
           "responsibilities": [
-            ".",
-            ".",
-            ".",
-            ".",
-            ".",
-            "."
+            "Liderança e gestão da equipe de suporte de operações e NOC, garantindo a alta disponibilidade e performance da rede.",
+            "Coordenação de projetos de infraestrutura de rede, desde o planejamento até a execução e monitoramento.",
+            "Implementação de soluções de Datacom e Mikrotik para otimização e expansão da rede.",
+            "Resolução de problemas complexos de conectividade e infraestrutura, minimizando o tempo de inatividade.",
+            "Treinamento e capacitação de novos membros da equipe nas tecnologias e procedimentos internos.",
+            "Elaboração de relatórios técnicos e indicadores de desempenho para a gestão."
           ]
         },
         {
-          "title": "Analista de rede",
-          "period": "março de 2021 - fevereiro de 2023 (2 anos)",
-          "location": "",
+          "title": "Analista de Rede",
+          "period": "Março de 2021 - Fevereiro de 2023 (2 anos)",
+          "location": "Fortaleza, Ceará",
           "responsibilities": [
-            ".",
-            ".",
-            ".",
-            ".",
-            "."
+            "Monitoramento proativo da infraestrutura de rede para identificar e resolver falhas.",
+            "Configuração e manutenção de equipamentos de rede (Switches DmOS, Mikrotik).",
+            "Suporte técnico especializado para clientes e equipe interna.",
+            "Otimização de rotas e protocolos de rede para garantir a eficiência da comunicação.",
+            "Documentação de topologias de rede e procedimentos operacionais."
           ]
         },
         {
-          "title": "Técnico de redes",
-          "period": "abril de 2018 - abril de 2020 (2 anos 1 mês)",
-          "location": "",
-          "responsibilities": []
+          "title": "Técnico de Redes",
+          "period": "Abril de 2018 - Abril de 2020 (2 anos 1 mês)",
+          "location": "Fortaleza, Ceará",
+          "responsibilities": [
+            "Instalação e configuração de pontos de rede e equipamentos de usuário.",
+            "Realização de diagnósticos e reparos em problemas de conectividade.",
+            "Manutenção preventiva e corretiva de infraestrutura física de rede."
+          ]
         }
       ]
     }
@@ -69,12 +73,12 @@
     {
       "institution": "Estácio",
       "course": "REDES DE COMPUTADORES, REDES DE COMPUTADORES",
-      "period": "2020 - julho de 2025"
+      "period": "2020 - Julho de 2025"
     },
     {
       "institution": "E.E.E.P Edson Queiroz",
       "course": "Ensino Técnico, Informática",
-      "period": "janeiro de 2015 - dezembro de 2017"
+      "period": "Janeiro de 2015 - Dezembro de 2017"
     }
   ]
 }
