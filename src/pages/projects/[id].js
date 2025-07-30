@@ -1,22 +1,29 @@
-// src/pages/projects/[id].js
+// src/pages/projects/[id].js (Correção: Importar Link)
 import Head from 'next/head';
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link'; // <--- ESTA LINHA FOI ADICIONADA!
 import path from 'path';
-import fs from 'fs/promises'; // Usado para ler o JSON
+import fs from 'fs/promises';
 
 export async function getStaticPaths() {
-  // Lista todos os arquivos JSON de projetos na pasta public/data
   const projectsDirectory = path.join(process.cwd(), 'public', 'data');
-  const filenames = await fs.readdir(projectsDirectory);
+  let filenames = [];
+  try {
+    filenames = await fs.readdir(projectsDirectory);
+  } catch (error) {
+    console.error("Erro ao ler diretório de projetos:", error);
+    return { paths: [], fallback: false };
+  }
+  
 
   const paths = filenames
-    .filter(filename => filename.endsWith('.json')) // Filtra apenas JSONs
+    .filter(filename => filename.endsWith('.json') && filename !== 'Untitled-1')
     .map((filename) => ({
       params: { id: filename.replace('.json', '') },
     }));
 
-  return { paths, fallback: false }; // fallback: false significa que rotas não existentes darão 404
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
@@ -30,12 +37,12 @@ export async function getStaticProps({ params }) {
       props: {
         project,
       },
-      revalidate: 60 // Revalida a cada 60 segundos
+      revalidate: 60
     };
   } catch (error) {
     console.error(`Erro ao carregar o projeto ${id}:`, error);
     return {
-      notFound: true, // Retorna 404 se o arquivo não for encontrado
+      notFound: true,
     };
   }
 }
@@ -100,9 +107,9 @@ export default function ProjectDetail({ project }) {
                     <Image
                       src={section.src}
                       alt={section.alt}
-                      width={800} // Tamanho fixo para imagens do conteúdo, ajuste conforme necessário
-                      height={450} // Aspect ratio 16:9, ajuste conforme necessário
-                      objectFit="contain" // Mostra a imagem inteira dentro do wrapper
+                      width={800}
+                      height={450}
+                      objectFit="contain"
                       quality={80}
                       className="project-image-content"
                     />
