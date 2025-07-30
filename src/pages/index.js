@@ -1,4 +1,4 @@
-// src/pages/index.js (Nova Página Inicial do Portfólio)
+// src/pages/index.js (Nova Página Inicial do Portfólio - Melhorada)
 import Head from 'next/head';
 import React from 'react';
 import Image from 'next/image';
@@ -8,37 +8,43 @@ export default function HomePage() {
     <div className="container">
       <Head>
         <title>Emerson Silva Ricardo - Portfólio</title>
-        <meta name="description" content="Portfólio de Emerson Silva Ricardo: Network and Infrastructure Analyst." />
+        <meta name="description" content="Portfólio de Emerson Silva Ricardo: Network and Infrastructure Analyst. Explore meus projetos, currículo e recursos de boas práticas." />
       </Head>
 
       <main className="main">
-        <div className="hero-section"> {/* Nova seção para a capa e informações */}
+        {/* Seção de Herói (Banner e Detalhes do Perfil) */}
+        <section className="hero-section">
           {/* Imagem de Capa (Banner) */}
           <div className="hero-banner">
             <Image
-              src="/imagens/capa.jpg" // <-- Coloque o nome da sua imagem de capa aqui
+              src="/imagens/capa.jpg" // Confirme o caminho da sua imagem de capa (ex: public/imagens/capa.jpg)
               alt="Capa do Portfólio de Emerson Silva Ricardo"
-              layout="fill" // Para cobrir o container
-              objectFit="cover" // Garante que a imagem cubra o espaço sem distorcer
-              quality={90} // Qualidade da imagem
-              priority // Carrega esta imagem mais rapidamente, pois é a principal
+              layout="fill"
+              objectFit="cover"
+              quality={90}
+              priority
             />
-            <div className="hero-overlay"></div> {/* Overlay para escurecer a imagem e melhorar legibilidade do texto */}
+            <div className="hero-overlay"></div>
           </div>
 
-          <div className="profile-details-card"> {/* Card com foto e detalhes */}
+          {/* Card com foto e detalhes */}
+          <div className="profile-details-card">
             <div className="profileImageContainer">
               <Image
-                src="/imagens/perfil.jpg" // <-- Sua foto de perfil (perfil.jpg ou perfil.png)
+                src="/imagens/perfil.jpg" // Confirme o caminho da sua foto de perfil (ex: public/imagens/perfil.jpg)
                 alt="Emerson Silva Ricardo"
                 width={150}
                 height={150}
                 className="profileImage"
               />
             </div>
+            {/* O h1 principal da página agora está aqui, dentro do card de destaque */}
             <h1 className="profile-name">Emerson Silva Ricardo</h1>
             <p className="profile-title">Network and Infrastructure Analyst</p>
-            <p className="profile-skills">Linux | Datacom | Mikrotik | Zabbix</p> {/* Suas principais habilidades */}
+            {/* Adicionei uma breve descrição para contextualizar suas habilidades */}
+            <p className="profile-skills">
+              Especialista em **Linux**, **Datacom** e **Mikrotik**, com foco em **análise e otimização de infraestrutura de redes**.
+            </p>
             <div className="profile-contact-info">
               <p><span>📞</span> 085992933087</p>
               <p><span>✉️</span> silvaemerson797@gmail.com</p>
@@ -47,23 +53,30 @@ export default function HomePage() {
               Ver Perfil no LinkedIn
             </a>
           </div>
-        </div>
+        </section>
 
-        {/* Seção dos Cards de Ação */}
+        {/* --- Seção de Ações Principais --- */}
         <section className="section-container">
-          <h2 className="section-title">Explore Meu Portfólio</h2>
+          <h2 className="section-title">Explore Meu Trabalho e Conhecimento</h2>
           <div className="callToActionGrid">
             <a href="/projects" className="actionCard">
               <h2>Meus Projetos &rarr;</h2>
-              <p>Veja os trabalhos que desenvolvi e as soluções que implementei.</p>
+              <p>Veja os trabalhos que desenvolvi e as soluções que implementei em redes e infraestrutura.</p>
             </a>
+            {/* Card para a página de currículo */}
             <a href="/resume" className="actionCard">
               <h2>Meu Currículo &rarr;</h2>
-              <p>Conheça minha experiência profissional e formação acadêmica.</p>
+              <p>Conheça minha experiência profissional, formação acadêmica e habilidades técnicas.</p>
             </a>
+            {/* Card para a página de downloads/recursos - Adicionado de volta! */}
+            <a href="/downloads" className="actionCard">
+              <h2>Recursos & Downloads &rarr;</h2>
+              <p>Acesse materiais, guias e boas práticas em redes e TI para download.</p>
+            </a>
+            {/* Card para a página de contato */}
             <a href="/contact" className="actionCard">
               <h2>Fale Comigo &rarr;</h2>
-              <p>Entre em contato para oportunidades de trabalho ou parcerias.</p>
+              <p>Entre em contato para oportunidades de trabalho, parcerias ou dúvidas.</p>
             </a>
           </div>
         </section>
