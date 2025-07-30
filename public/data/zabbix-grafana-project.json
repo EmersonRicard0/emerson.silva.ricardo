@@ -1,0 +1,76 @@
+
+{
+  "id": "zabbix-grafana",
+  "title": "Monitoramento de Rede Avançado: Zabbix e Grafana",
+  "subtitle": "Visibilidade Completa e Proativa da Infraestrutura",
+  "category": "Monitoramento de Rede",
+  "technologies": ["Zabbix", "Grafana", "Linux", "MySQL", "Networking"],
+  "mainImage": "/imagens/projetos/zabbix-grafana-capa.jpg",
+  "introduction": "Neste projeto, implementei uma solução robusta e escalável para monitoramento de infraestrutura de rede, utilizando o Zabbix para coleta de métricas e alertas, e o Grafana para visualização dinâmica e criação de dashboards personalizados. O objetivo foi proporcionar uma visibilidade completa e proativa sobre a saúde e performance de equipamentos de rede, servidores e serviços críticos.",
+  "sections": [
+    {
+      "type": "heading",
+      "content": "Desafio e Solução"
+    },
+    {
+      "type": "paragraph",
+      "content": "O principal desafio era centralizar o monitoramento de múltiplos dispositivos e garantir que a equipe tivesse informações em tempo real para identificar e resolver problemas rapidamente, antes que afetassem os utilizadores. A solução envolveu a instalação e configuração do Zabbix Server, agentes Zabbix nos dispositivos monitorizados, e a integração com o Grafana para transformar os dados brutos em dashboards intuitivos e acionáveis."
+    },
+    {
+      "type": "heading",
+      "content": "Funcionalidades Principais"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Coleta Abrangente de Métricas:** Monitoramento de CPU, memória, disco, tráfego de rede, disponibilidade de serviços (HTTP, SSH, DNS) e logs.",
+        "**Alertas Personalizados:** Configuração de triggers e ações para notificação via e-mail, Telegram ou outros canais em caso de anomalias.",
+        "**Dashboards Interativos no Grafana:** Criação de painéis visuais com gráficos em tempo real, tabelas e medidores para diferentes aspetos da rede.",
+        "**Histórico de Dados:** Armazenamento de métricas históricas para análise de tendências e planeamento de capacidade.",
+        "**Monitoramento Distribuído:** Capacidade de monitorar ambientes remotos usando Zabbix Proxies."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Zabbix em Ação: Coleta e Alerta"
+    },
+    {
+      "type": "image",
+      "src": "/imagens/projetos/zabbix-alerts.png",
+      "alt": "Exemplo de tela de alertas do Zabbix",
+      "caption": "Visão geral dos alertas e eventos críticos em tempo real no Zabbix."
+    },
+    {
+      "type": "paragraph",
+      "content": "No Zabbix, configurei templates personalizados para dispositivos Mikrotik e Datacom, garantindo a coleta de métricas específicas de tráfego por interface, utilização de CPU em roteadores e latência. A criação de triggers com diferentes níveis de severidade permite uma resposta rápida a incidentes."
+    },
+    {
+      "type": "heading",
+      "content": "Visualização com Grafana: Dashboards Interativos"
+    },
+    {
+      "type": "image",
+      "src": "/imagens/projetos/grafana-dashboard1.png",
+      "alt": "Dashboard de rede no Grafana",
+      "caption": "Dashboard principal com métricas de tráfego, utilização de recursos e latência."
+    },
+    {
+      "type": "paragraph",
+      "content": "O Grafana foi essencial para transformar os dados do Zabbix em informações compreensíveis. Criei dashboards para diferentes departamentos, focando em visões gerais de rede, desempenho de servidores específicos e um painel exclusivo para o NOC com os KPIs mais importantes."
+    },
+    {
+      "type": "image",
+      "src": "/imagens/projetos/grafana-dashboard2.png",
+      "alt": "Outro dashboard de monitoramento com Grafana",
+      "caption": "Detalhes de performance de um servidor específico e seus serviços."
+    },
+    {
+      "type": "heading",
+      "content": "Resultados Alcançados"
+    },
+    {
+      "type": "paragraph",
+      "content": "A implementação desta solução resultou numa redução significativa no tempo de inatividade da rede, melhoria na deteção proativa de problemas e otimização do planeamento de capacidade. A equipe agora tem uma visão unificada e em tempo real de toda a infraestrutura, facilitando a tomada de decisões e a resolução de problemas."
+    }
+  ]
+}
