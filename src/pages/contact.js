@@ -1,4 +1,4 @@
-// src/pages/contact.js (Aprimorado)
+// src/pages/contact.js (REESTRUTURADO COM CARDS)
 import Head from 'next/head';
 import React from 'react';
 
@@ -13,44 +13,46 @@ export default function ContactPage() {
       <main className="main">
         <section className="section-container">
           <h1 className="section-title">Fale Comigo</h1>
-          <p className="description" style={{ marginBottom: '50px' }}>
-            Estou sempre aberto a novas oportunidades, desafios e colaborações. Sinta-se à vontade para entrar em contato!
+          <p className="description" style={{ marginBottom: '50px', maxWidth: '700px', margin: '0 auto 50px' }}>
+            Estou sempre aberto a novas oportunidades, desafios e colaborações. Sinta-se à vontade para entrar em contato através das opções abaixo:
           </p>
 
-          {/* NOVO: Usando a classe 'resumeSection' para criar um card de contato */}
-          <div className="resumeSection contactCard">
-            <h2>Informações de Contato</h2> {/* Título para o card */}
+          {/* NOVO: Usando a estrutura do 'callToActionGrid' com 'actionCard' */}
+          <div className="callToActionGrid"> {/* Reutiliza a classe de grid para os cards */}
 
-            <div className="contactInfoGrid"> {/* NOVO: Grid para organizar os itens de contato */}
-              <div className="contactItem">
-                <span className="contactIcon">✉️</span> {/* Ícone */}
-                <a href="mailto:silvaemerson797@gmail.com" className="contactLink">silvaemerson797@gmail.com</a>
-              </div>
+            {/* Card para E-mail */}
+            <a href="mailto:silvaemerson797@gmail.com" className="actionCard">
+              <h2>E-mail &rarr;</h2>
+              <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                <span>✉️</span> silvaemerson797@gmail.com
+              </p>
+            </a>
 
-              <div className="contactItem">
-                <span className="contactIcon">📞</span> {/* Ícone */}
-                <a href="tel:+5585992933087" className="contactLink">+55 85 99293-3087</a> {/* Adicionado +55 e formatado */}
-              </div>
+            {/* Card para Telefone/WhatsApp */}
+            <a href="tel:+5585992933087" className="actionCard">
+              <h2>Telefone &rarr;</h2>
+              <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                <span>📞</span> +55 85 99293-3087
+              </p>
+            </a>
 
-              <div className="contactItem">
-                <span className="contactIcon">🔗</span> {/* Ícone */}
-                <a href="https://www.linkedin.com/in/emerson-silva-ricardo-543308119" target="_blank" rel="noopener noreferrer" className="contactLink">Meu Perfil no LinkedIn</a>
-              </div>
-            </div>
+            {/* Card para LinkedIn */}
+            <a href="https://www.linkedin.com/in/emerson-silva-ricardo-543308119" target="_blank" rel="noopener noreferrer" className="actionCard">
+              <h2>LinkedIn &rarr;</h2>
+              <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                <span>🔗</span> Meu Perfil
+              </p>
+            </a>
 
-            {/* Futuramente, você pode adicionar um formulário de contato aqui */}
-            {/* Exemplo: */}
+            {/* Opcional: Adicionar um card para um futuro formulário de contato, se desejar */}
             {/*
-            <div style={{ marginTop: '40px', paddingTop: '20px', borderTop: '1px dashed var(--border-subtle)' }}>
-              <h3>Envie-me uma mensagem</h3>
-              <form className="contactForm">
-                <input type="text" placeholder="Seu Nome" required />
-                <input type="email" placeholder="Seu E-mail" required />
-                <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
-                <button type="submit" className="linkedin-button">Enviar Mensagem</button>
-              </form>
+            <div className="actionCard">
+              <h2>Enviar Mensagem &rarr;</h2>
+              <p>Preencha nosso formulário de contato direto.</p>
+              // Aqui poderia ter um botão para um modal ou link para outra página de formulário
             </div>
             */}
+
           </div>
         </section>
       </main>
