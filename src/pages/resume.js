@@ -1,4 +1,4 @@
-// src/pages/resume.js (Completo)
+// src/pages/resume.js (Completo - Reestruturado com Cards)
 import Head from 'next/head';
 import React from 'react';
 import { getResumeData } from '../utils/dataFetcher';
@@ -33,44 +33,52 @@ export default function ResumePage({ resume }) {
       </Head>
 
       <main className="main">
+        {/* Seção Resumo - Já é um card (resumeSection) */}
         <section className="resumeSection">
           <h2>Resumo</h2>
           <p>{resume.summary}</p>
         </section>
 
+        {/* Seção Experiência Profissional */}
         <section className="resumeSection">
           <h2>Experiência Profissional</h2>
-          {resume.experience.map((exp, index) => (
-            <div key={index} className="experienceBlock">
-              <h3>{exp.company}</h3>
-              {exp.roles.map((role, roleIndex) => (
-                <div key={roleIndex} className="roleBlock">
-                  <h4>{role.title}</h4>
-                  <p className="periodLocation">{role.period} | {role.location}</p>
-                  {role.responsibilities.length > 0 && (
-                    <ul>
-                      {role.responsibilities.map((resp, respIndex) => (
-                        <li key={respIndex}>{resp}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
-            </div>
-          ))}
+          <div className="resumeGrid"> {/* NOVO: Um grid para os cards de experiência */}
+            {resume.experience.map((exp, index) => (
+              <div key={index} className="resumeSubCard experienceBlock"> {/* Cada empresa/bloco de experiência é um card */}
+                <h3>{exp.company}</h3>
+                {exp.roles.map((role, roleIndex) => (
+                  <div key={roleIndex} className="roleBlock">
+                    <h4>{role.title}</h4>
+                    <p className="periodLocation">{role.period} | {role.location}</p>
+                    {role.responsibilities.length > 0 && (
+                      <ul>
+                        {role.responsibilities.map((resp, respIndex) => (
+                          <li key={respIndex}>{resp}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </section>
 
+        {/* Seção Formação Acadêmica */}
         <section className="resumeSection">
           <h2>Formação Acadêmica</h2>
-          {resume.education.map((edu, index) => (
-            <div key={index} className="educationBlock">
-              <h3>{edu.institution}</h3>
-              <p>{edu.course}</p>
-              <p className="periodLocation">{edu.period}</p>
-            </div>
-          ))}
+          <div className="resumeGrid"> {/* NOVO: Um grid para os cards de formação */}
+            {resume.education.map((edu, index) => (
+              <div key={index} className="resumeSubCard educationBlock"> {/* Cada instituição é um card */}
+                <h3>{edu.institution}</h3>
+                <p>{edu.course}</p>
+                <p className="periodLocation">{edu.period}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
+        {/* Seção Habilidades e Competências - Já é um card (resumeSection) */}
         <section className="resumeSection">
           <h2>Habilidades e Competências</h2>
           <div className="skillsGrid">
@@ -80,6 +88,7 @@ export default function ResumePage({ resume }) {
           </div>
         </section>
 
+        {/* Seção Contato - Já é um card (resumeSection) */}
         <section className="resumeSection">
           <h2>Contato</h2>
           <p>Email: <a href={`mailto:${resume.personalInfo.contact.email}`} className="contactLink">{resume.personalInfo.contact.email}</a></p>

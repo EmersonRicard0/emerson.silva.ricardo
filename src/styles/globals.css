@@ -708,13 +708,17 @@ body {
 }
 
 .project-content ul {
-  list-style-type: disc;
-  margin-left: 30px;
+  /* REGRAS ATUALIZADAS E FORÇADAS PARA LISTAS DO CURRÍCULO */
+  list-style-type: disc !important;
+  list-style-position: outside !important;
+  margin-left: 30px !important;
+  padding-left: 0 !important; /* Resetar padding-left padrão para usar margin-left */
   margin-bottom: 1.5rem;
 }
 
 .project-content li {
   margin-bottom: 10px;
+  padding-left: 5px !important; /* Adiciona padding ao texto do item para afastar do bullet */
 }
 
 .project-image-wrapper {
