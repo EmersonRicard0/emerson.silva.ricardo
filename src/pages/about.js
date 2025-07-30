@@ -16,9 +16,8 @@ export default function AboutPage() {
           Este repositório foi criado com o objetivo de facilitar o acesso a imagens ISO de sistemas operacionais macOS para propósitos de desenvolvimento, teste e reinstalação. Nossa missão é oferecer uma plataforma confiável e fácil de usar para a comunidade.
         </p>
         <p className="description" style={{ maxWidth: '800px' }}>
-          **Disclaimer:** As imagens são disponibilizadas para fins de conveniência e o usuário é responsável por garantir que possui as licenças adequadas da Apple para o uso do software.
+          <strong>Disclaimer:</strong> As imagens são disponibilizadas para fins de conveniência e o usuário é responsável por garantir que possui as licenças adequadas da Apple para o uso do software.
         </p>
-        {/* Você pode adicionar mais conteúdo aqui */}
       </main>
     </div>
   );
