@@ -371,7 +371,7 @@ body {
 
 /* Botão Hambúrguer (Mobile) */
 .hamburger {
-  display: none;
+  display: none; /* Inicia oculto no desktop */
   background: none;
   border: none;
   cursor: pointer;
@@ -391,13 +391,70 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
+/* Menu de navegação responsivo */
+@media (max-width: 768px) {
+  .navbarContainer {
+    padding: 0 1.5rem; /* Padding lateral ajustado */
+  }
+
+  .hamburger {
+    display: flex; /* Exibe o hambúrguer no mobile */
+  }
+
+  .navLinks {
+    display: none; /* Oculta os links no mobile por padrão */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Abaixo da navbar */
+    left: 0;
+    width: 100%;
+    background-color: var(--background-secondary);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-100%); /* Começa fora da tela */
+    opacity: 0;
+    pointer-events: none; /* Não clicável quando oculto */
+  }
+
+  .navLinks.open {
+    display: flex; /* Exibe os links quando o menu está aberto */
+    transform: translateY(0); /* Desliza para a posição */
+    opacity: 1;
+    pointer-events: all; /* Clicável */
+  }
+
+  .navItem {
+    padding: 1rem 1.5rem; /* Padding para cada item do menu */
+    font-size: 1.3rem; /* Tamanho maior para facilitar o toque */
+    width: 100%;
+    text-align: center;
+  }
+  
+  .navItem::after { /* Oculta a linha de hover no mobile para não interferir */
+    display: none;
+  }
+
+  .hamburger.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+
 /* --- Estilos para as seções de Currículo (ResumePage) --- */
 .resumeSection {
   background-color: var(--background-secondary);
   border-radius: var(--border-radius-lg);
   padding: 35px; /* Padding um pouco maior */
   margin-bottom: 45px; /* Mais espaço */
-  box-shadow: 0 10px 30px var(--shadow-light); /* Sombra mais suave */
+  box-shadow: 0 10px 30px var(--shadow-light); /* Sombra suave e consistente */
   width: 100%;
   max-width: 950px; /* Largura máxima um pouco maior */
   text-align: left;
@@ -494,6 +551,57 @@ body {
   color: var(--accent-blue-dark) !important;
 }
 
+/* --- Estilos para a Página de Contato (contact.js) --- */
+.contactCard {
+  max-width: 700px; /* Largura máxima para o card de contato */
+  padding: 40px; /* Padding um pouco maior */
+}
+
+.contactCard h2 {
+  font-size: 2rem; /* Título dentro do card */
+  margin-bottom: 30px;
+}
+
+.contactInfoGrid {
+  display: flex;
+  flex-direction: column; /* Itens em coluna */
+  gap: 25px; /* Espaçamento entre os itens */
+  align-items: flex-start; /* Alinha os itens à esquerda */
+  width: 100%; /* Ocupa a largura total do card */
+  padding: 0 20px; /* Padding interno para não colar nas bordas do card */
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  font-size: 1.15rem; /* Tamanho da fonte dos itens de contato */
+  color: var(--text-primary); /* Cor do texto principal */
+  transition: color 0.2s ease;
+}
+
+.contactItem:hover {
+  color: var(--accent-blue); /* Mudar cor no hover */
+}
+
+.contactIcon {
+  font-size: 1.8rem; /* Tamanho dos ícones (emojis) */
+  margin-right: 15px; /* Espaço entre ícone e texto */
+  line-height: 1; /* Alinhamento vertical do ícone */
+  color: var(--accent-blue); /* Cor do ícone */
+}
+
+.contactItem a {
+  color: var(--text-primary); /* Cor do link */
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.contactItem a:hover {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
+
+
 /* Responsividade Geral */
 @media (max-width: 1024px) {
   .main {
@@ -538,32 +646,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .navbarContainer {
-    padding: 0 1.5rem;
-  }
-  .navLinks {
-    flex-direction: column;
-    padding: 1.5rem 0;
-  }
-  .navItem {
-    padding: 1rem 1.5rem;
-    font-size: 1.3rem;
-  }
-  .navItem:active {
-    background-color: rgba(0, 122, 255, 0.08); /* Cor mais suave no active */
-  }
-  .hamburger {
-    display: flex;
-  }
-  .hamburger.open .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .hamburger.open .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.open .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
+  /* Os estilos da Navbar para mobile já estão definidos acima, antes deste bloco */
 
   /* Ajustes para telas muito pequenas */
   .title { /* Assume que você ainda tem um .title na home, se não, pode remover */
@@ -610,6 +693,11 @@ body {
   .callToActionGrid, .grid {
     padding: 0 15px;
     gap: 20px;
+    grid-template-columns: 1fr; /* Força uma coluna no mobile para cards */
+  }
+  .actionCard {
+    padding: 25px; /* Padding ajustado para mobile */
+    min-width: unset; /* Remove min-width para mobile */
   }
   .actionCard h2 {
     font-size: 1.6rem;
@@ -637,6 +725,26 @@ body {
   .skillTag {
     padding: 7px 15px;
     font-size: 0.9rem;
+  }
+
+  /* Responsividade para a página de contato em mobile */
+  .contactCard {
+    padding: 30px;
+  }
+  .contactCard h2 {
+    font-size: 1.8rem;
+  }
+  .contactInfoGrid {
+    padding: 0; /* Remove padding interno para mobile */
+  }
+  .contactItem {
+    font-size: 1rem;
+    flex-direction: row;
+    justify-content: center; /* Centraliza itens se houver espaço */
+    text-align: center;
+  }
+  .contactIcon {
+    margin-right: 10px;
   }
 }
 
@@ -697,5 +805,24 @@ body {
   }
   .roleBlock h4 {
     font-size: 1rem;
+  }
+
+  /* Responsividade para a página de contato em telas muito pequenas */
+  .contactCard {
+    padding: 20px;
+  }
+  .contactCard h2 {
+    font-size: 1.5rem;
+  }
+  .contactItem {
+    font-size: 0.9rem;
+    flex-direction: column; /* Força coluna para cada item para não quebrar */
+    align-items: center; /* Centraliza verticalmente */
+    text-align: center;
+    margin-bottom: 10px; /* Espaço entre os itens */
+  }
+  .contactIcon {
+    margin-right: 0; /* Remove margem lateral */
+    margin-bottom: 5px; /* Adiciona margem abaixo do ícone */
   }
 }
