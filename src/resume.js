@@ -1,4 +1,4 @@
-// src/pages/resume.js
+// src/pages/resume.js (Reestruturado para Cards e com últimas correções)
 import Head from 'next/head';
 import React from 'react';
 import { getResumeData } from '../utils/dataFetcher';
@@ -9,7 +9,7 @@ export async function getStaticProps() {
     props: {
       resume,
     },
-    revalidate: 60
+    revalidate: 60 // Revalida a cada 60 segundos
   };
 }
 
@@ -33,25 +33,28 @@ export default function ResumePage({ resume }) {
       </Head>
 
       <main className="main">
+        {/* Seção Resumo - Já é um card (resumeSection) */}
         <section className="resumeSection">
           <h2>Resumo</h2>
-          <p>{resume.summary || 'Sem resumo disponível.'}</p>
+          <p>{resume.summary}</p>
         </section>
 
+        {/* Seção Experiência Profissional */}
         <section className="resumeSection">
           <h2>Experiência Profissional</h2>
-          <div className="resumeGrid">
-            {(resume.experience || []).map((exp, index) => (
+          <div className="resumeGrid"> {/* NOVO: Um grid para os cards de experiência */}
+            {resume.experience.map((exp, index) => (
+              // Cada bloco de empresa/experiência é um card individual
               <div key={index} className="resumeSubCard experienceBlock">
                 <h3>{exp.company}</h3>
-                {(exp.roles || []).map((role, roleIndex) => (
+                {exp.roles.map((role, roleIndex) => (
                   <div key={roleIndex} className="roleBlock">
                     <h4>{role.title}</h4>
                     <p className="periodLocation">{role.period} | {role.location}</p>
-                    {(role.responsibilities || []).length > 0 && (
-                      <ul>
+                    {role.responsibilities.length > 0 && (
+                      <ul> {/* Garante que é uma lista HTML */}
                         {role.responsibilities.map((resp, respIndex) => (
-                          <li key={respIndex}>{resp}</li>
+                          <li key={respIndex}>{resp}</li> {/* Cada responsabilidade é um item de lista */}
                         ))}
                       </ul>
                     )}
@@ -62,10 +65,12 @@ export default function ResumePage({ resume }) {
           </div>
         </section>
 
+        {/* Seção Formação Acadêmica */}
         <section className="resumeSection">
           <h2>Formação Acadêmica</h2>
-          <div className="resumeGrid">
-            {(resume.education || []).map((edu, index) => (
+          <div className="resumeGrid"> {/* NOVO: Um grid para os cards de formação */}
+            {resume.education.map((edu, index) => (
+              // Cada instituição de ensino é um card individual
               <div key={index} className="resumeSubCard educationBlock">
                 <h3>{edu.institution}</h3>
                 <p>{edu.course}</p>
@@ -75,15 +80,17 @@ export default function ResumePage({ resume }) {
           </div>
         </section>
 
+        {/* Seção Habilidades e Competências - Já é um card (resumeSection) */}
         <section className="resumeSection">
           <h2>Habilidades e Competências</h2>
           <div className="skillsGrid">
-            {(resume.skills || []).map((skill, index) => (
+            {resume.skills.map((skill, index) => (
               <span key={index} className="skillTag">{skill}</span>
             ))}
           </div>
         </section>
 
+        {/* Seção Contato - Já é um card (resumeSection) */}
         <section className="resumeSection">
           <h2>Contato</h2>
           <p>Email: <a href={`mailto:${resume.personalInfo.contact.email}`} className="contactLink">{resume.personalInfo.contact.email}</a></p>
