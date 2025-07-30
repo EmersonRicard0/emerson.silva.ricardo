@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Portfólio de Emerson Silva Ricardo
 
-## Getting Started
+Este é um projeto desenvolvido com Next.js, utilizando Pages Router e estilização personalizada inspirada no design da Apple.
 
-First, run the development server:
+🚀 Funcionalidades
 
-```bash
+Página inicial com banner e perfil interativo
+
+Navegação responsiva com Navbar fixo
+
+Currículo dinâmico carregado via JSON
+
+Projetos com detalhes carregados de arquivos .json
+
+Página de downloads com recursos técnicos
+
+Contato por e-mail, telefone e LinkedIn
+
+Layout responsivo com design moderno
+
+🚧 Tecnologias Utilizadas
+
+Next.js 15.4.4
+
+React 19.1.0
+
+Estilização com CSS customizado e globals.css
+
+Componentização com React e uso de Image do Next.js
+
+Fontes otimizadas com next/font
+
+🚡 Como rodar localmente
+
+Clone o repositório e instale as dependências:
+
+npm install
+# ou
+yarn
+
+Inicie o servidor de desenvolvimento:
+
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse http://localhost:3000 no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+📑 Estrutura de Páginas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+/ — Página inicial com informações do perfil
 
-## Learn More
+/projects — Listagem de projetos
 
-To learn more about Next.js, take a look at the following resources:
+/projects/[id] — Detalhes individuais de cada projeto via JSON
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+/resume — Currículo dinâmico
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+/downloads — Links para arquivos de apoio
 
-## Deploy on Vercel
+/contact — Informações de contato
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🚗 Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Recomendado utilizar Vercel para hospedagem, com integração direta com GitHub e suporte nativo a Next.js.
+
+⚖️ Licença
+
+Este projeto é de uso pessoal e educacional. Não possui fins comerciais.
+
+Desenvolvido com ❤️ por Emerson Silva Ricardo
+
+LinkedIn | silvaemerson797@gmail.com
